@@ -1,7 +1,7 @@
 // Feature.js
 import React from 'react'
 import imageUrlBuilder from '@sanity/image-url'
-import client from '../../client'
+import client from '../client'
 import styles from './Feature.module.css'
 
 const builder = imageUrlBuilder(client)

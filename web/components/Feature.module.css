@@ -1,12 +1,10 @@
 /* Feature.*/
 .root {
-  composes: center from "../../styles/shared.module.css";
   margin-bottom: 4rem;
   margin-top: 2rem;
 }
 
 .container {
-  composes: narrow-container from "../../styles/shared.module.css";
 }
 
 .grid {
