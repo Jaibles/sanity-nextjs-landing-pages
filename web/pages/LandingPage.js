@@ -25,10 +25,6 @@ const pageQuery = groq`
       plan[] {
         ...,
         route->
-      },
-      feature[] {
-        ...,
-        route->
       }
     }
   }
@@ -36,6 +32,13 @@ const pageQuery = groq`
 `
 
 class LandingPage extends Component {
+  constructor () {
+    super()
+    this.state = {
+      features: []
+    }
+  }
+
   static propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
@@ -43,8 +46,6 @@ class LandingPage extends Component {
     disallowRobots: PropTypes.any,
     openGraphImage: PropTypes.any,
     content: PropTypes.any,
-    plan: PropTypes.any,
-    feature: PropTypes.any,
     config: PropTypes.any,
     slug: PropTypes.any
   }
@@ -77,10 +78,6 @@ class LandingPage extends Component {
                 ...,
                 route->
               },
-              feature[] {
-                ...,
-                route->
-              },
               plan[] {
                 ...,
                 route->
@@ -96,6 +93,16 @@ class LandingPage extends Component {
     return null
   }
 
+  componentDidMount () {
+    const query = '*[_type == "feature"]'
+    const params = {}
+    client.fetch(query, params).then((results) => {
+      if (results) {
+        this.setState({features: results})
+      }
+    })
+  }
+
   render () {
     const {
       title = 'Missing title',
@@ -103,8 +110,6 @@ class LandingPage extends Component {
       disallowRobots,
       openGraphImage,
       content = [],
-      plan = [],
-      feature = [],
       config = {},
       slug
     } = this.props
@@ -161,8 +166,11 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
-        <feature>{plan}</feature>
-        <feature>{feature && <RenderSections sections={feature} />}</feature>
+        {
+          this.state.features.map(feature => (
+            <p key={feature._id}>{feature.title}</p>
+          ))
+        }
       </Layout>
     )
   }
