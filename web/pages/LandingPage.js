@@ -103,8 +103,8 @@ class LandingPage extends Component {
       disallowRobots,
       openGraphImage,
       content = [],
-      plan = {},
-      feature,
+      plan = [],
+      feature = [],
       config = {},
       slug
     } = this.props
@@ -161,8 +161,8 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
-        {plan && <RenderSections sections={plan} />}
-        {feature && <RenderSections sections={feature} />}
+        <feature>{plan}</feature>
+        <feature>{feature && <RenderSections sections={feature} />}</feature>
       </Layout>
     )
   }
