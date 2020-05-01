@@ -1,8 +1,8 @@
 // eventInformation.js
 export default {
-  name: 'eventInformation',
+  name: 'customerMap',
   type: 'document',
-  title: 'Event Information',
+  title: 'Customer Map',
   fields: [
     {
       name: 'name',

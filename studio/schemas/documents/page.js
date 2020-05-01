@@ -28,6 +28,18 @@ export default {
       ],
     },
     {
+      name: 'feature',
+      type: 'array',
+      description: 'Publish one or more persons and set a reference to them here.',
+      title: 'Feature',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'feature' }]
+        }
+      ]
+    },
+    {
       name: 'plan',
       type: 'array',
       description: 'Publish one or more persons and set a reference to them here.',

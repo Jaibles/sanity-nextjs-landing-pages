@@ -25,6 +25,10 @@ const pageQuery = groq`
       plan[] {
         ...,
         route->
+      },
+      feature[] {
+        ...,
+        route->
       }
     }
   }
@@ -39,6 +43,8 @@ class LandingPage extends Component {
     disallowRobots: PropTypes.any,
     openGraphImage: PropTypes.any,
     content: PropTypes.any,
+    plan: PropTypes.any,
+    feature: PropTypes.any,
     config: PropTypes.any,
     slug: PropTypes.any
   }
@@ -53,7 +59,6 @@ class LandingPage extends Component {
       return client.fetch(pageQuery, {slug}).then(res => ({...res.page, slug}))
     }
 
-asdajsdgaskjdh
     // Frontpage
     if (slug && slug === '/') {
       return client
@@ -69,6 +74,10 @@ asdajsdgaskjdh
                 route->
               },
               ctas[] {
+                ...,
+                route->
+              },
+              feature[] {
                 ...,
                 route->
               },
@@ -94,6 +103,8 @@ asdajsdgaskjdh
       disallowRobots,
       openGraphImage,
       content = [],
+      plan = {},
+      feature,
       config = {},
       slug
     } = this.props
@@ -150,6 +161,8 @@ asdajsdgaskjdh
           }}
         />
         {content && <RenderSections sections={content} />}
+        {plan && <RenderSections sections={plan} />}
+        {feature && <RenderSections sections={feature} />}
       </Layout>
     )
   }

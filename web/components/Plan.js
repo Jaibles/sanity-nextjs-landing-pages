@@ -1,6 +1,5 @@
-// Feature.js
+// Plan.js
 import React from 'react'
-import client from '../../client'
 import styles from './Plan.module.css'
 
 function Plan ({name}) {

@@ -1,6 +1,6 @@
 export default {
   name: 'feature',
-  type: 'object',
+  type: 'document',
   title: 'Feature',
   fields: [
     {
