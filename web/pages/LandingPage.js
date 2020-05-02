@@ -6,7 +6,6 @@ import imageUrlBuilder from '@sanity/image-url'
 import Layout from '../components/Layout'
 import Plan from '../components/Plan'
 import Customer from '../components/Customer'
-import Feature from '../components/Feature'
 import client from '../client'
 import RenderSections from '../components/RenderSections'
 import styles from './LandingPage.module.css'
@@ -14,19 +13,7 @@ import styles from './LandingPage.module.css'
 const builder = imageUrlBuilder(client)
 const pageQuery = groq`
 *[_type == "route" && slug.current == $slug][0]{
-  page-> {
-    ...,
-    content[] {
-      ...,
-      cta {
-        ...,
-        route->
-      },
-      ctas[] {
-        ...,
-        route->
-      }
-    },
+  page-> {...,content[] {}...,
   }
 }
 `
@@ -39,7 +26,7 @@ class LandingPage extends Component {
     disallowRobots: PropTypes.any,
     openGraphImage: PropTypes.any,
     content: PropTypes.any,
-    feature: PropTypes.any,
+    features: PropTypes.any,
     config: PropTypes.any,
     slug: PropTypes.any
   }
@@ -60,21 +47,10 @@ class LandingPage extends Component {
         .fetch(
           groq`
         *[_id == "global-config"][0]{
-          frontpage -> {
-            ...,
-            content[] {
-              ...,
-              cta {
-                ...,
-                route->
-              },
-              ctas[] {
-                ...,
-                route->
-              },
-            },
-          }
+          frontpage -> {...,content[] {...,},
+          features
         }
+      }
       `
         )
         .then(res => ({...res.frontpage, slug}))
@@ -90,7 +66,7 @@ class LandingPage extends Component {
       disallowRobots,
       openGraphImage,
       content = [],
-      feature = [],
+      features = [],
       config = {},
       slug
     } = this.props
@@ -147,12 +123,12 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
-
-        <div className={styles.container}>
-          <div className={styles.features}>
-            {feature && <Feature />}
-          </div>
-        </div>
+        {features && (
+          <ul>
+            Posted in
+            {features.map(feature => <li key={feature}>{feature.title}{feature.key}</li>)}
+          </ul>
+        )}
         <div className={styles.bg}>
           <div className={styles.customers}>
             <Customer />

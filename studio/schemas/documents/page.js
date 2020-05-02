@@ -27,7 +27,7 @@ export default {
       ],
     },
     {
-      name: 'feature',
+      name: 'features',
       type: 'array',
       description: 'Publish one or more persons and set a reference to them here.',
       title: 'Feature',
