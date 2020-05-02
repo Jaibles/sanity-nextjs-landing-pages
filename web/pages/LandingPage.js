@@ -4,8 +4,12 @@ import NextSeo from 'next-seo'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import Layout from '../components/Layout'
+import Plan from '../components/Plan'
+import Customer from '../components/Customer'
+import Feature from '../components/Feature'
 import client from '../client'
 import RenderSections from '../components/RenderSections'
+import styles from './LandingPage.module.css'
 
 const builder = imageUrlBuilder(client)
 const pageQuery = groq`
@@ -21,24 +25,13 @@ const pageQuery = groq`
       ctas[] {
         ...,
         route->
-      },
-      plan[] {
-        ...,
-        route->
       }
-    }
+    },
   }
 }
 `
 
 class LandingPage extends Component {
-  constructor () {
-    super()
-    this.state = {
-      features: []
-    }
-  }
-
   static propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
@@ -46,6 +39,7 @@ class LandingPage extends Component {
     disallowRobots: PropTypes.any,
     openGraphImage: PropTypes.any,
     content: PropTypes.any,
+    feature: PropTypes.any,
     config: PropTypes.any,
     slug: PropTypes.any
   }
@@ -78,10 +72,6 @@ class LandingPage extends Component {
                 ...,
                 route->
               },
-              plan[] {
-                ...,
-                route->
-              }
             },
           }
         }
@@ -93,16 +83,6 @@ class LandingPage extends Component {
     return null
   }
 
-  componentDidMount () {
-    const query = '*[_type == "feature"]'
-    const params = {}
-    client.fetch(query, params).then((results) => {
-      if (results) {
-        this.setState({features: results})
-      }
-    })
-  }
-
   render () {
     const {
       title = 'Missing title',
@@ -110,6 +90,7 @@ class LandingPage extends Component {
       disallowRobots,
       openGraphImage,
       content = [],
+      feature = [],
       config = {},
       slug
     } = this.props
@@ -166,11 +147,22 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
-        {
-          this.state.features.map(feature => (
-            <p key={feature._id}>{feature.title}</p>
-          ))
-        }
+
+        <div className={styles.container}>
+          <div className={styles.features}>
+            {feature && <Feature />}
+          </div>
+        </div>
+        <div className={styles.bg}>
+          <div className={styles.customers}>
+            <Customer />
+          </div>
+        </div>
+        <div className={styles.container}>
+          <div className={styles.plans}>
+            <Plan />
+          </div>
+        </div>
       </Layout>
     )
   }

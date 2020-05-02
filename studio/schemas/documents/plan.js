@@ -2,7 +2,7 @@
 export default {
   type: 'document',
   name: 'plan',
-  title: 'Plan',
+  title: 'Plans',
   fields: [
     {
       name: 'name',
@@ -10,19 +10,26 @@ export default {
       type: 'string'
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'mainImage'
+      name: 'priceMonthly',
+      title: 'Price Monthly',
+      type: 'string'
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      description: 'Some frontends will require a slug to be set to be able to show the person',
-      options: {
-        source: 'name',
-        maxLength: 96
-      }
+      name: 'priceAnnually',
+      title: 'Price Annually',
+      type: 'string'
+    },
+    {
+      name: 'features',
+      type: 'array',
+      description: 'Relevant features',
+      title: 'Features',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'feature'}]
+        }
+      ]
     }
   ]
 }

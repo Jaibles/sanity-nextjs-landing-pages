@@ -7,7 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Document types
 import page from './documents/page'
 import route from './documents/route'
-import customerMap from './documents/customerMap'
+import customer from './documents/customer'
 import plan from './documents/plan'
 import siteConfig from './documents/siteConfig'
 import session from './documents/session'
@@ -39,7 +39,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     feature,
-    customerMap,
+    customer,
     plan,
     cta,
     embedHTML,

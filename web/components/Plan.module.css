@@ -1,7 +1,9 @@
 /* Plan.*/
-.root {
-  margin-bottom: 4rem;
-  margin-top: 2rem;
+.plan {
+  border: 2px solid #000;
+  border-radius: 3px;
+  text-align: center;
+  padding: 32px;
 }
 
 .container {

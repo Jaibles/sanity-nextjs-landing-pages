@@ -1,0 +1,46 @@
+/* Feature.*/
+.root {
+  composes: center from "../styles/shared.module.css";
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.container {
+  composes: container from "../styles/shared.module.css";
+}
+
+.features {
+  display: grid;
+  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
+  grid-gap: 2rem;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
+  grid-gap: 2rem;
+}
+
+.customers {
+  display: flex;
+  flex-direction: row;
+}
+
+.bg {
+  background: var(--color-very-light-gray);
+  margin: 80px 0;
+  padding: 80px;
+  overflow-x: scroll;
+}
+
+.figure {
+  margin: 0;
+}
+
+.photo {
+  width: 100px;
+}
+
+.quote {
+  margin: 0 0 0 1rem;
+}

@@ -1,7 +1,7 @@
 export default {
   name: 'feature',
   type: 'document',
-  title: 'Feature',
+  title: 'Features',
   fields: [
     {
       name: 'title',

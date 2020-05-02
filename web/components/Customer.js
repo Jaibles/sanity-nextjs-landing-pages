@@ -1,26 +1,26 @@
-// Plan.js
+// Customer.js
 import React, {Component} from 'react'
 import client from '../client'
-import styles from './Feature.module.css'
+import styles from './Customer.module.css'
 import imageUrlBuilder from '@sanity/image-url'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
 
-class Feature extends Component {
+class Customer extends Component {
   constructor () {
     super()
     this.state = {
-      features: []
+      customers: []
     }
   }
   componentDidMount () {
-    const query = '*[_type == "feature"] | order(_createdAt asc)'
+    const query = '*[_type == "customer"] | order(_createdAt asc)'
     const params = {}
     client.fetch(query, params).then((results) => {
       if (results) {
-        this.setState({features: results})
+        this.setState({customers: results})
       }
     })
   }
@@ -28,20 +28,21 @@ class Feature extends Component {
     return (
       <>
         {
-          this.state.features.map(feature => (
+          this.state.customers.map(customer => (
             <div className={styles.root}>
               <div className={styles.container}>
-                {feature.icon && (
-                  <div>
+                {customer.image && (
+                  <div className={styles.mapImageContainer}>
                     <img
-                      src={urlFor(feature.icon)
-                        .width(50)
+                      src={urlFor(customer.image)
                         .url()}
                     />
                   </div>
                 )}
-                <div><h3>{feature.title}</h3></div>
-                <p>{feature.body}</p>
+                <div className={styles.mapDetails}>
+                  <h5>{customer.mapTitle}</h5>
+                  <p>{customer.customer}</p>
+                </div>
               </div>
             </div>
           ))
@@ -51,4 +52,4 @@ class Feature extends Component {
   }
 }
 
-export default Feature
+export default Customer
