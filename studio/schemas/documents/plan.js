@@ -20,16 +20,10 @@ export default {
       type: 'string'
     },
     {
-      name: 'features',
+      name: 'included',
+      title: 'Whats Included',
       type: 'array',
-      description: 'Relevant features',
-      title: 'Features',
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'feature'}]
-        }
-      ]
+      of: [{type: 'string'}]
     }
   ]
 }

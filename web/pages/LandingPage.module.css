@@ -1,4 +1,3 @@
-/* Feature.*/
 .root {
   composes: center from "../styles/shared.module.css";
   margin-bottom: 4rem;
@@ -9,23 +8,6 @@
   composes: container from "../styles/shared.module.css";
 }
 
-.features {
-  display: grid;
-  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
-  grid-gap: 2rem;
-}
-
-.plans {
-  display: grid;
-  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
-  grid-gap: 2rem;
-}
-
-.customers {
-  display: flex;
-  flex-direction: row;
-}
-
 .bg {
   background: var(--color-very-light-gray);
   margin: 80px 0;
@@ -33,14 +15,59 @@
   overflow-x: scroll;
 }
 
-.figure {
-  margin: 0;
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
+  grid-gap: 2rem;
 }
 
-.photo {
-  width: 100px;
+.feature {
+  border: var(--border-default);
+  border-radius: var(--border-radius-sm);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.quote {
-  margin: 0 0 0 1rem;
+.featureText {
+  margin-top: 12px;
+}
+
+/* Plans */
+.plans {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
+  grid-gap: 2rem;
+}
+
+.planIncluded {
+  border: 1px solid red;
+}
+
+
+/* Customers */
+.customers {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+.customer {
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin: 8px;
+  background: var(--color-white);
+}
+
+.mapDetails {
+  padding: 16px;
+}
+
+.mapImageContainer {
+  padding: 0;
+  height: 152px;
+  overflow: hidden;
+  border-bottom: var(--border-default);
 }

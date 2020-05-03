@@ -24,7 +24,7 @@ class Plan extends Component {
       <>
         {
           this.state.plans.map(plan => (
-            <div className={styles.container}>
+            <div key={plan} className={styles.container}>
               <div className={styles.plan}>
                 <div><h5>{plan.name}</h5></div>
                 <div><h2>{plan.priceAnnually}</h2></div>

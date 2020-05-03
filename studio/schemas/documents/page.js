@@ -5,48 +5,67 @@ export default {
   fieldsets: [
     {
       title: 'SEO & metadata',
-      name: 'metadata',
-    },
+      name: 'metadata'
+    }
   ],
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Title',
+      title: 'Title'
     },
     {
       name: 'content',
       type: 'array',
       title: 'Page sections',
       of: [
-        { type: 'hero' },
-        { type: 'imageSection' },
-        { type: 'mailchimp' },
-        { type: 'textSection' },
-        { type: 'testimonial' },
-      ],
+        {type: 'hero'},
+        {type: 'imageSection'},
+        {type: 'mailchimp'},
+        {type: 'textSection'},
+        {type: 'testimonial'}
+      ]
+    },
+    {
+      name: 'featureTitle',
+      type: 'string',
+      title: 'Feature Title'
     },
     {
       name: 'features',
       type: 'array',
-      description: 'Publish one or more persons and set a reference to them here.',
-      title: 'Feature',
+      title: 'Features',
       of: [
         {
           type: 'reference',
-          to: [{ type: 'feature' }]
+          to: [{type: 'feature'}]
         }
       ]
     },
     {
-      name: 'plan',
+      name: 'customersTitle',
+      type: 'simplePortableText',
+      title: 'Customers Title'
+    },
+    {
+      name: 'customers',
       type: 'array',
-      description: 'Publish one or more persons and set a reference to them here.',
-      title: 'Plan',
+      title: 'Customers',
       of: [
         {
           type: 'reference',
-          to: [{ type: 'plan' }]
+          to: [{type: 'customer'}]
+        }
+      ]
+    },
+    {
+      name: 'plans',
+      type: 'array',
+      title: 'Plans',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'plan'}]
         }
       ]
     },
@@ -55,21 +74,21 @@ export default {
       type: 'text',
       title: 'Description',
       description: 'This description populates meta-tags on the webpage',
-      fieldset: 'metadata',
+      fieldset: 'metadata'
     },
     {
       name: 'openGraphImage',
       type: 'image',
       title: 'Open Graph Image',
       description: 'Image for sharing previews on Facebook, Twitter etc.',
-      fieldset: 'metadata',
-    },
+      fieldset: 'metadata'
+    }
   ],
 
   preview: {
     select: {
       title: 'title',
-      media: 'openGraphImage',
-    },
-  },
-};
+      media: 'openGraphImage'
+    }
+  }
+}

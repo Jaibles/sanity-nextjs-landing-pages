@@ -29,7 +29,7 @@ class Feature extends Component {
       <>
         {
           this.state.features.map(feature => (
-            <div className={styles.root}>
+            <div key={feature} className={styles.root}>
               <div className={styles.container}>
                 {feature.icon && (
                   <div>

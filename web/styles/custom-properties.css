@@ -20,6 +20,7 @@
   --color-accent: #156dff;
 
   --border-default: 2px solid var(--color-black);
+  --border-radius-sm: 3px;
 
   /* Typography */
   --unit: 16;

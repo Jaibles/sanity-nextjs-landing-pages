@@ -7,6 +7,10 @@
   align-items: flex-start;
 }
 
+.textCenter {
+  text-align: center;
+}
+
 .container {
   max-width: var(--wide-container, 80rem);
   margin: 0 auto;
