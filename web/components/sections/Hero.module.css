@@ -30,7 +30,7 @@
   @media (--media-min-medium) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
-    padding-top: 5rem
+    padding-top: 2rem
   }
 }
 

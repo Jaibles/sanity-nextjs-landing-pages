@@ -4,7 +4,7 @@ import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import styles from './Header.module.css'
-import HamburgerIcon from './icons/Hamburger'
+// import HamburgerIcon from './icons/Hamburger'
 
 class Header extends Component {
   state = {showNav: false}
@@ -87,6 +87,7 @@ class Header extends Component {
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
         </h1>
+        {/*
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
             {navItems &&
@@ -114,6 +115,7 @@ class Header extends Component {
             <HamburgerIcon className={styles.hamburgerIcon} />
           </button>
         </nav>
+        */}
       </div>
     )
   }

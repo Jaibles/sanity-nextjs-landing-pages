@@ -1,0 +1,26 @@
+/* Plan.*/
+.plan {
+  border: 2px solid #000;
+  border-radius: 3px;
+  text-align: center;
+  padding: 32px;
+}
+
+.container {
+}
+
+.grid {
+  border: 1px solid red;
+}
+
+.figure {
+  margin: 0;
+}
+
+.photo {
+  width: 100px;
+}
+
+.quote {
+  margin: 0 0 0 1rem;
+}

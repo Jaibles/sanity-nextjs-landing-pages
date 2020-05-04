@@ -23,3 +23,35 @@ body,
 :global(.content) {
   min-height: calc(100% - 84px - 218px);
 }
+
+h1 {
+  font-size: var(--font-title1-size);
+  margin: 0;
+}
+h2 {
+  font-size: var(--font-title2-size);
+  margin: 0 0 12px;
+}
+h3 {
+  font-size: var(--font-title3-size);
+  margin: 0 0 8px;
+}
+h4 {
+  font-size: var(--font-title4-size);
+  margin: 0;
+}
+h5 {
+  font-size: var(--font-title5-size);
+  margin: 0;
+}
+h6 {
+  font-size: var(--font-title6-size);
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-family-mono);
+  color: var(--color-gray);
+  font-size: var(--font-small-size);
+  margin: 0;
+}

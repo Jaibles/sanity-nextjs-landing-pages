@@ -3,14 +3,13 @@
 
 .root {
   position: relative;
-  color: var(--color-black, #000);
   display: flex;
+  justify-content: center;
   margin: 0 auto;
-  max-width: var(--width-small);
+  max-width: var(--width-medium);
 }
 
 .root a {
-  color: inherit;
   text-decoration: inherit;
 }
 
@@ -37,10 +36,6 @@
     vertical-align: top;
   }
 
-  @nest & svg path {
-    fill: currentColor;
-  }
-
   @media (--media-max-medium) {
     flex: 1;
   }
@@ -48,6 +43,11 @@
 
 .logo {
   display: block;
+  margin-top: 40px;
+}
+
+.logo svg {
+  max-width: 120px;
 }
 
 .nav {

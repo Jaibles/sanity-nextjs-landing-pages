@@ -6,6 +6,11 @@ import imageUrlBuilder from '@sanity/image-url'
 import Layout from '../components/Layout'
 import client from '../client'
 import RenderSections from '../components/RenderSections'
+import styles from './LandingPage.module.css'
+
+function urlFor (source) {
+  return imageUrlBuilder(client).image(source)
+}
 
 const builder = imageUrlBuilder(client)
 const pageQuery = groq`
@@ -35,6 +40,14 @@ class LandingPage extends Component {
     disallowRobots: PropTypes.any,
     openGraphImage: PropTypes.any,
     content: PropTypes.any,
+    features: PropTypes.any,
+    customers: PropTypes.any,
+    plans: PropTypes.any,
+    featureTitle: PropTypes.string,
+    customersTitle: PropTypes.string,
+    customersSubTitle: PropTypes.string,
+    plansTitle: PropTypes.string,
+    plansSubTitle: PropTypes.string,
     config: PropTypes.any,
     slug: PropTypes.any
   }
@@ -55,21 +68,12 @@ class LandingPage extends Component {
         .fetch(
           groq`
         *[_id == "global-config"][0]{
-          frontpage -> {
-            ...,
-            content[] {
-              ...,
-              cta {
-                ...,
-                route->
-              },
-              ctas[] {
-                ...,
-                route->
-              }
-            }
-          }
+          frontpage -> {...,content[] {...,},
+          features[]->,
+          customers[]->,
+          plans[]->
         }
+      }
       `
         )
         .then(res => ({...res.frontpage, slug}))
@@ -84,11 +88,19 @@ class LandingPage extends Component {
       description,
       disallowRobots,
       openGraphImage,
+      featureTitle = [],
+      customersTitle = [],
+      customersSubTitle = [],
+      plansTitle = [],
+      plansSubTitle = [],
       content = [],
+      features = [],
+      customers = [],
+      plans = [],
       config = {},
       slug
     } = this.props
-
+    console.log(customersTitle)
     const openGraphImages = openGraphImage
       ? [
         {
@@ -141,6 +153,86 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
+        {features && (
+          <div className={styles.container}>
+            <div className={styles.textCenter}>
+              <h2>{featureTitle}</h2>
+            </div>
+            <div className={styles.features}>
+              {features.map(feature =>
+                <div key={feature} className={styles.feature}>
+                  {feature.icon && (
+                    <div>
+                      <img
+                        src={urlFor(feature.icon)
+                          .width(50)
+                          .url()}
+                      />
+                    </div>
+                  )}
+                  <div className={styles.featureText}>
+                    <h3>{feature.title}{feature.key}</h3>
+                    <p>{feature.body}</p>
+                  </div>
+                </div>
+              )
+              }
+            </div>
+          </div>
+        )}
+        {customers && (
+          <div className={styles.bg}>
+            <div className={styles.container}>
+              <div className={styles.textCenter}>
+                <h2>{customersTitle}</h2>
+                <p>{customersSubTitle}</p>
+              </div>
+              <div className={styles.customers}>
+                {customers.map(customer =>
+                  <div key={customer} className={styles.customer}>
+                    {customer.image && (
+                      <div className={styles.mapImageContainer}>
+                        <img
+                          src={urlFor(customer.image)
+                            .height(152)
+                            .url()}
+                        />
+                      </div>
+                    )}
+                    <div className={styles.mapDetails}>
+                      <h5>{customer.mapTitle}{customer.key}</h5>
+                      <p>{customer.customer}</p>
+                    </div>
+                  </div>
+                )
+                }
+              </div>
+            </div>
+          </div>
+        )}
+        {plans && (
+          <div className={styles.container}>
+            <div className={styles.textCenter}>
+              <h2>{plansTitle}</h2>
+              <p>{plansSubTitle}</p>
+            </div>
+            <div className={styles.plans}>
+              {plans.map(plan =>
+                <div key={plan} className={styles.plan}>
+                  <div className={styles.planName}>{plan.name}</div>
+                  <div className={styles.planPrice}>{plan.priceAnnually}</div>
+                  {plan.included
+                    ? plan.included.map(message => {
+                      return <p className={styles.planIncluded} key={message}>{message}</p>
+                    })
+                    : null
+                  }
+                </div>
+              )
+              }
+            </div>
+          </div>
+        )}
       </Layout>
     )
   }

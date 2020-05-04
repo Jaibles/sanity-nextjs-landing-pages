@@ -1,0 +1,27 @@
+/* Feature.*/
+.root {
+  composes: center from "../styles/shared.module.css";
+  border: 2px solid #000;
+  border-radius: 3px;
+  padding: 32px;
+}
+
+.container {
+  composes: narrow-container from "../styles/shared.module.css";
+}
+
+.grid {
+  border: 1px solid red;
+}
+
+.figure {
+  margin: 0;
+}
+
+.photo {
+  width: 100px;
+}
+
+.quote {
+  margin: 0 0 0 1rem;
+}

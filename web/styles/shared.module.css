@@ -7,13 +7,21 @@
   align-items: flex-start;
 }
 
+.textCenter {
+  text-align: center;
+}
+
 .container {
-  margin: 0 1rem;
+  max-width: var(--wide-container, 80rem);
+  margin: 0 auto;
 
   @media (--typography-breakpoint) {
-    margin: 0;
     width: 100%;
   }
+}
+
+.background {
+  background: var(--color-very-light-gray);
 }
 
 .normal-container {
