@@ -155,7 +155,7 @@ class LandingPage extends Component {
         {content && <RenderSections sections={content} />}
         {features && (
           <div className={styles.container}>
-            <div className={styles.root}>
+            <div className={styles.textCenter}>
               <h2>{featureTitle}</h2>
             </div>
             <div className={styles.features}>
@@ -219,8 +219,8 @@ class LandingPage extends Component {
             <div className={styles.plans}>
               {plans.map(plan =>
                 <div key={plan} className={styles.plan}>
-                  <div><h5>{plan.name}</h5></div>
-                  <div><h2>{plan.priceAnnually}</h2></div>
+                  <div className={styles.planName}>{plan.name}</div>
+                  <div className={styles.planPrice}>{plan.priceAnnually}</div>
                   {plan.included
                     ? plan.included.map(message => {
                       return <p className={styles.planIncluded} key={message}>{message}</p>

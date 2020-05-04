@@ -13,7 +13,7 @@
 }
 
 .bg {
-  background: var(--color-very-light-gray);
+  composes: background from "../styles/shared.module.css";
   margin: 80px 0;
   padding: 80px;
   overflow-x: scroll;
@@ -24,6 +24,7 @@
   display: grid;
   grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
   grid-gap: 2rem;
+  margin: 3rem 0 8rem;
 }
 
 .feature {
@@ -41,7 +42,7 @@
 
 /* Plans */
 .plans {
-  margin-top: 40px;
+  margin: 3rem 0 2rem;
   display: grid;
   grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
   grid-gap: 2rem;
@@ -51,18 +52,32 @@
 .plan {
   border: var(--border-default);
   border-radius: var(--border-radius-sm);
-  padding: 24px;
+  padding: 32px 24px;
+}
+
+.plan:first-of-type {
+  border: var(--border-light);
+}
+
+.planPrice {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 4px 0 12px;
+}
+
+.planName {
+  font-size: 16px;
 }
 
 .planIncluded {
-  margin: 12px 0;
+  margin: 16px 0;
 }
 
 /* Customers */
 .customers {
   display: grid;
   grid-template-columns: 33.3% 33.3% 33.3%;
-  margin-top: 40px;
+  margin: 3rem 0 2rem;
 }
 
 .customer {

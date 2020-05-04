@@ -20,6 +20,10 @@
   }
 }
 
+.background {
+  background: var(--color-very-light-gray);
+}
+
 .normal-container {
   composes: container;
 
