@@ -35,10 +35,6 @@
     color: inherit;
     vertical-align: top;
   }
-
-  @media (--media-max-medium) {
-    flex: 1;
-  }
 }
 
 .logo {
@@ -47,7 +43,7 @@
 }
 
 .logo svg {
-  max-width: 120px;
+  max-width: 180px;
 }
 
 .nav {
