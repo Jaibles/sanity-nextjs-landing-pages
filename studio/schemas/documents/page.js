@@ -17,7 +17,7 @@ export default {
     {
       name: 'content',
       type: 'array',
-      title: 'Page sections',
+      title: 'Hero sections',
       of: [
         {type: 'hero'},
         {type: 'imageSection'},
@@ -44,8 +44,13 @@ export default {
     },
     {
       name: 'customersTitle',
-      type: 'simplePortableText',
+      type: 'string',
       title: 'Customers Title'
+    },
+    {
+      name: 'customersSubTitle',
+      type: 'string',
+      title: 'Customers SubTitle'
     },
     {
       name: 'customers',
@@ -57,6 +62,16 @@ export default {
           to: [{type: 'customer'}]
         }
       ]
+    },
+    {
+      name: 'plansTitle',
+      type: 'string',
+      title: 'Plans Title'
+    },
+    {
+      name: 'plansSubTitle',
+      type: 'string',
+      title: 'Plans SubTitle'
     },
     {
       name: 'plans',

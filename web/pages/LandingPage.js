@@ -44,6 +44,10 @@ class LandingPage extends Component {
     customers: PropTypes.any,
     plans: PropTypes.any,
     featureTitle: PropTypes.string,
+    customersTitle: PropTypes.string,
+    customersSubTitle: PropTypes.string,
+    plansTitle: PropTypes.string,
+    plansSubTitle: PropTypes.string,
     config: PropTypes.any,
     slug: PropTypes.any
   }
@@ -85,6 +89,10 @@ class LandingPage extends Component {
       disallowRobots,
       openGraphImage,
       featureTitle = [],
+      customersTitle = [],
+      customersSubTitle = [],
+      plansTitle = [],
+      plansSubTitle = [],
       content = [],
       features = [],
       customers = [],
@@ -92,7 +100,7 @@ class LandingPage extends Component {
       config = {},
       slug
     } = this.props
-    console.log(customers)
+    console.log(customersTitle)
     const openGraphImages = openGraphImage
       ? [
         {
@@ -145,13 +153,11 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
-        <div className={styles.container}>
-          <div className={styles.root}>
-            <h2>{featureTitle}</h2>
-          </div>
-        </div>
         {features && (
           <div className={styles.container}>
+            <div className={styles.root}>
+              <h2>{featureTitle}</h2>
+            </div>
             <div className={styles.features}>
               {features.map(feature =>
                 <div key={feature} className={styles.feature}>
@@ -177,6 +183,10 @@ class LandingPage extends Component {
         {customers && (
           <div className={styles.bg}>
             <div className={styles.container}>
+              <div className={styles.textCenter}>
+                <h2>{customersTitle}</h2>
+                <p>{customersSubTitle}</p>
+              </div>
               <div className={styles.customers}>
                 {customers.map(customer =>
                   <div key={customer} className={styles.customer}>
@@ -202,14 +212,21 @@ class LandingPage extends Component {
         )}
         {plans && (
           <div className={styles.container}>
+            <div className={styles.textCenter}>
+              <h2>{plansTitle}</h2>
+              <p>{plansSubTitle}</p>
+            </div>
             <div className={styles.plans}>
               {plans.map(plan =>
-                <div key={plan} className={styles.container}>
+                <div key={plan} className={styles.plan}>
                   <div><h5>{plan.name}</h5></div>
                   <div><h2>{plan.priceAnnually}</h2></div>
-                  <div className={styles.planIncluded}>
-                    <p>{plan.included}</p>
-                  </div>
+                  {plan.included
+                    ? plan.included.map(message => {
+                      return <p className={styles.planIncluded} key={message}>{message}</p>
+                    })
+                    : null
+                  }
                 </div>
               )
               }

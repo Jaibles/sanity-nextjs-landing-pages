@@ -4,6 +4,10 @@
   margin-top: 2rem;
 }
 
+.textCenter {
+  text-align: center;
+}
+
 .container {
   composes: container from "../styles/shared.module.css";
 }
@@ -37,21 +41,28 @@
 
 /* Plans */
 .plans {
-  margin-top: 80px;
+  margin-top: 40px;
   display: grid;
   grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
   grid-gap: 2rem;
+  text-align: center;
+}
+
+.plan {
+  border: var(--border-default);
+  border-radius: var(--border-radius-sm);
+  padding: 24px;
 }
 
 .planIncluded {
-  border: 1px solid red;
+  margin: 12px 0;
 }
-
 
 /* Customers */
 .customers {
   display: grid;
   grid-template-columns: 33.3% 33.3% 33.3%;
+  margin-top: 40px;
 }
 
 .customer {
