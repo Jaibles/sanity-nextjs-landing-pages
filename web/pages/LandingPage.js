@@ -4,6 +4,7 @@ import NextSeo from 'next-seo'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import Layout from '../components/Layout'
+import Toggle from '../components/Toggle'
 import client from '../client'
 import RenderSections from '../components/RenderSections'
 import styles from './LandingPage.module.css'
@@ -214,6 +215,11 @@ class LandingPage extends Component {
             <div className={styles.textCenter}>
               <h2>{plansTitle}</h2>
               <p>{plansSubTitle}</p>
+            </div>
+            <div className={styles.toggleContainer}>
+              <p>Monthly</p>
+              <Toggle />
+              <p className={styles.dark}>Annual</p>
             </div>
             <div className={styles.plans}>
               {plans.map(plan =>
