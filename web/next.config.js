@@ -1,5 +1,6 @@
 const withCSS = require('@zeit/next-css')
 const client = require('./client')
+const withFonts = require('next-fonts')
 
 const isProduction = process.env.NODE_ENV === 'production'
 const query = `
