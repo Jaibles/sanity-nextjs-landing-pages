@@ -1,4 +1,4 @@
-// Customer.js
+import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 import client from '../client'
 import styles from './Customer.module.css'
@@ -9,45 +9,36 @@ function urlFor (source) {
 }
 
 class Customer extends Component {
-  constructor () {
-    super()
-    this.state = {
-      customers: []
-    }
+  static propTypes = {
+    customers: PropTypes.any
   }
-  componentDidMount () {
-    const query = '*[_type == "customer"] | order(_createdAt asc)'
-    const params = {}
-    client.fetch(query, params).then((results) => {
-      if (results) {
-        this.setState({customers: results})
-      }
-    })
-  }
+
   render () {
+    const {
+      customers = []
+    } = this.props
     return (
-      <>
-        {
-          this.state.customers.map(customer => (
-            <div className={styles.root}>
-              <div className={styles.container}>
-                {customer.image && (
-                  <div className={styles.mapImageContainer}>
-                    <img
-                      src={urlFor(customer.image)
-                        .url()}
-                    />
-                  </div>
-                )}
-                <div className={styles.mapDetails}>
-                  <h5>{customer.mapTitle}</h5>
-                  <p>{customer.customer}</p>
-                </div>
+      <div>
+        {customers.map(customer =>
+          <div key={customer.key} className={styles.customer}>
+            {customer.image && (
+              <div className={styles.mapImageContainer}>
+                <img
+                  src={urlFor(customer.image)
+                    .height(154)
+                    .width(420)
+                    .url()}
+                />
               </div>
+            )}
+            <div className={styles.mapDetails}>
+              <h5>{customer.mapTitle}{customer.key}</h5>
+              <p>{customer.customer}</p>
             </div>
-          ))
+          </div>
+        )
         }
-      </>
+      </div>
     )
   }
 }

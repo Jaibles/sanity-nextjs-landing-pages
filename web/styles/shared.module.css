@@ -14,6 +14,7 @@
 .container {
   max-width: var(--wide-container, 80rem);
   margin: 0 auto;
+  padding: 0 16px;
 
   @media (--typography-breakpoint) {
     width: 100%;

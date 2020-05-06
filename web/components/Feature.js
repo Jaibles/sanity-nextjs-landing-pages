@@ -1,4 +1,4 @@
-// Plan.js
+import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 import client from '../client'
 import styles from './Feature.module.css'
@@ -9,44 +9,35 @@ function urlFor (source) {
 }
 
 class Feature extends Component {
-  constructor () {
-    super()
-    this.state = {
-      features: []
-    }
+  static propTypes = {
+    features: PropTypes.any
   }
-  componentDidMount () {
-    const query = '*[_type == "feature"] | order(_createdAt asc)'
-    const params = {}
-    client.fetch(query, params).then((results) => {
-      if (results) {
-        this.setState({features: results})
-      }
-    })
-  }
+
   render () {
+    const {
+      features = []
+    } = this.props
     return (
-      <>
-        {
-          this.state.features.map(feature => (
-            <div key={feature} className={styles.root}>
-              <div className={styles.container}>
-                {feature.icon && (
-                  <div>
-                    <img
-                      src={urlFor(feature.icon)
-                        .width(50)
-                        .url()}
-                    />
-                  </div>
-                )}
-                <div><h3>{feature.title}</h3></div>
-                <p>{feature.body}</p>
+      <div>
+        {features.map(feature =>
+          <div key={feature.key} className={styles.feature}>
+            {feature.icon && (
+              <div>
+                <img
+                  src={urlFor(feature.icon)
+                    .width(50)
+                    .url()}
+                />
               </div>
+            )}
+            <div className={styles.featureText}>
+              <h3>{feature.title}{feature.key}</h3>
+              <p>{feature.body}</p>
             </div>
-          ))
+          </div>
+        )
         }
-      </>
+      </div>
     )
   }
 }

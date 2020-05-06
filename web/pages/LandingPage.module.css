@@ -1,13 +1,18 @@
 @import "../styles/custom-media.css";
 
-.root {
-  composes: center from "../styles/shared.module.css";
-  margin-bottom: 4rem;
-  margin-top: 2rem;
-}
-
 .textCenter {
   text-align: center;
+}
+
+.darkText {
+  color: var(--color-black)
+}
+
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0;
 }
 
 .container {
@@ -22,95 +27,44 @@
 }
 
 /* Features */
-.features {
+.features > div {
   display: grid;
-  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
   margin: 3rem 0 8rem;
 
   @media (--media-max-medium) {
     grid-template-columns: minmax(200px,1fr);
-    margin: 3rem 1rem 8rem;
+    margin: 3rem 0 8rem;
   }
-}
-
-.feature {
-  border: var(--border-default);
-  border-radius: var(--border-radius-sm);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.featureText {
-  margin-top: 12px;
-}
-
-/* Plans */
-.plans {
-  margin: 3rem 0 2rem;
-  display: grid;
-  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
-  grid-gap: 2rem;
-  text-align: center;
-
-  @media (--media-max-medium) {
-    grid-template-columns: minmax(200px,1fr);
-    margin: 3rem 1rem 8rem;
-  }
-}
-
-.plan {
-  border: var(--border-default);
-  border-radius: var(--border-radius-sm);
-  padding: 32px 24px;
-}
-
-.plan:first-of-type {
-  border: var(--border-light);
-}
-
-.planPrice {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 4px 0 12px;
-}
-
-.planName {
-  font-size: 16px;
-}
-
-.planIncluded {
-  margin: 16px 0;
 }
 
 /* Customers */
-.customers {
+.customers > div {
   display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-columns:  minmax(33%,1fr) minmax(33%,1fr) minmax(33%,1fr);
   margin: 3rem 0 2rem;
 
   @media (--media-max-medium) {
+    display: flex;
+    padding-left: 16px;
     grid-template-columns: 100%;
-    margin: 3rem 1rem 8rem;
+    margin: 3rem 1rem 2rem;
+    width: 100vw;
+    margin-left: -1.5rem;
+    overflow-x: auto;
   }
 }
 
-.customer {
-  border: 2px solid #000;
-  border-radius: 5px;
-  margin: 8px;
-  background: var(--color-white);
-}
+/* Plans */
+.plans > div {
+  margin: 2rem 0 2rem;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
 
-.mapDetails {
-  padding: 16px;
-}
-
-.mapImageContainer {
-  padding: 0;
-  height: 152px;
-  overflow: hidden;
-  border-bottom: var(--border-default);
+  @media (--media-max-medium) {
+    flex-direction: column;
+    margin: 3rem 0 8rem;
+  }
 }

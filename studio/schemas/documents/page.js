@@ -17,7 +17,7 @@ export default {
     {
       name: 'content',
       type: 'array',
-      title: 'Hero sections',
+      title: 'Page sections',
       of: [
         {type: 'hero'},
         {type: 'imageSection'},

@@ -9,6 +9,9 @@ function Footer (props) {
   const {navItems, text, router} = props
   return (
     <div className={styles.root}>
+      <div className={styles.text}>
+        <SimpleBlockContent blocks={text} />
+      </div>
       <nav>
         <ul className={styles.items}>
           {navItems &&
@@ -32,9 +35,6 @@ function Footer (props) {
             })}
         </ul>
       </nav>
-      <div className={styles.text}>
-        <SimpleBlockContent blocks={text} />
-      </div>
     </div>
   )
 }
