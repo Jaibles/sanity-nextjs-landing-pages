@@ -4,7 +4,7 @@ import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import styles from './Header.module.css'
-// import HamburgerIcon from './icons/Hamburger'
+import HamburgerIcon from './icons/Hamburger'
 
 class Header extends Component {
   state = {showNav: false}
@@ -21,6 +21,7 @@ class Header extends Component {
     navItems: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
+        navText: PropTypes.string,
         slug: PropTypes.shape({
           current: PropTypes.string
         }).isRequired
@@ -87,12 +88,11 @@ class Header extends Component {
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
         </h1>
-        {/*
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
             {navItems &&
               navItems.map(item => {
-                const {slug, title, _id} = item
+                const {slug, title, navText, _id} = item
                 const isActive =
                   router.pathname === '/LandingPage' && router.query.slug === slug.current
                 return (
@@ -105,7 +105,7 @@ class Header extends Component {
                       as={`/${slug.current}`}
                       prefetch
                     >
-                      <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
+                      <a data-is-active={isActive ? 'true' : 'false'}>{navText}</a>
                     </Link>
                   </li>
                 )
@@ -115,7 +115,6 @@ class Header extends Component {
             <HamburgerIcon className={styles.hamburgerIcon} />
           </button>
         </nav>
-        */}
       </div>
     )
   }

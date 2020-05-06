@@ -12,6 +12,11 @@ export default {
       title: 'Slug',
     },
     {
+      name: 'navText',
+      type: 'string',
+      title: 'Nav Text'
+    },
+    {
       name: 'page',
       type: 'reference',
       description: 'Select the page that this route should point to',

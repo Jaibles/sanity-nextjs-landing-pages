@@ -7,6 +7,9 @@
   justify-content: center;
   margin: 0 auto;
   max-width: var(--width-medium);
+  @media (--media-max-medium) {
+    justify-content: space-between;
+  }
 }
 
 .root a {
@@ -39,7 +42,6 @@
 
 .logo {
   display: block;
-  margin-top: 40px;
 }
 
 .logo svg {
@@ -87,11 +89,21 @@
   white-space: nowrap;
   align-items: stretch;
   line-height: calc(var(--font-base-line-height) * 1.5rem);
+  font-weight: 700;
+  font-size: var(--font-small-size);
 
   @nest & > a {
     display: block;
     position: relative;
     padding: 1.5rem 0.5rem;
+    color: var(--color-dark-gray);
+
+    @nest &[data-is-active="true"] {
+      color: var(--color-primary);
+    }
+
+    @nest &[data-is-active="false"] {
+    }
 
     @media (--media-max-medium) {
       padding: 1rem 1.5rem;

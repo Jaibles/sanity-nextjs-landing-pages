@@ -50,4 +50,6 @@
   background: var(--color-primary);
   color: #fff;
   border-radius: var(--border-radius-sm);
+  font-weight: 700;
+  font-size: var(--font-small-size);
 }
