@@ -35,3 +35,19 @@
 .planIncluded {
   margin: 16px 0;
 }
+
+
+.plan:first-of-type .btn,
+.plan:nth-child(3)  .btn {
+  background: var(--color-light-gray);
+  color: var(--color-black);
+}
+
+.btn {
+  margin-top: 24px;
+  text-decoration: none;
+  padding: 12px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--border-radius-sm);
+}

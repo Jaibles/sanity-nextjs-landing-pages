@@ -24,6 +24,16 @@ export default {
       title: 'Whats Included',
       type: 'array',
       of: [{type: 'string'}]
+    },
+    {
+      name: 'ctaButton',
+      title: 'CTA Button text',
+      type: 'string'
+    },
+    {
+      name: 'ctaLink',
+      title: 'CTA Button link',
+      type: 'string'
     }
   ]
 }
