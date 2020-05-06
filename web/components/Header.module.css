@@ -123,6 +123,10 @@
     }
   }
 
+  .undefined a {
+    border: 1px solid red !Important;
+  }
+
   @nest .root[data-show-nav="true"] & > a[data-is-active="true"]::before {
     display: none;
   }

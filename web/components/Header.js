@@ -5,6 +5,7 @@ import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import styles from './Header.module.css'
 import HamburgerIcon from './icons/Hamburger'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 class Header extends Component {
   state = {showNav: false}
@@ -20,7 +21,7 @@ class Header extends Component {
     title: PropTypes.string,
     navItems: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.string.isRequired,
+        title: PropTypes.string,
         navText: PropTypes.string,
         slug: PropTypes.shape({
           current: PropTypes.string
@@ -90,9 +91,15 @@ class Header extends Component {
         </h1>
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
+            <li className={styles.navItem}>
+              <AnchorLink className={styles.this} href='#features'>Features</AnchorLink>
+            </li>
+            <li className={styles.navItem}>
+              <AnchorLink className={styles.this} href='#pricing'>Pricing</AnchorLink>
+            </li>
             {navItems &&
               navItems.map(item => {
-                const {slug, title, navText, _id} = item
+                const {slug, navText, _id} = item
                 const isActive =
                   router.pathname === '/LandingPage' && router.query.slug === slug.current
                 return (
