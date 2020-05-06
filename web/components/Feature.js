@@ -15,8 +15,17 @@ class Feature extends Component {
 
   render () {
     const {
-      features = []
+      features = {
+        comingsoon: false
+      }
     } = this.props
+
+    function EmailMessage (props) {
+      return features && features.comingsoon
+        ? 'Yes, yes it does.'
+        : 'No. Check back later'
+    }
+
     return (
       <div>
         {features.map(feature =>
@@ -33,6 +42,15 @@ class Feature extends Component {
             <div className={styles.featureText}>
               <h3>{feature.title}{feature.key}</h3>
               <p>{feature.body}</p>
+              {feature.comingsoon}
+              Boolean Value: { feature.comingsoon.toString() }
+
+              Boolean Value: { String(feature.comingsoon) }
+              {`Boolean Value: ${feature.comingsoon}`}
+              Boolean Value: { JSON.stringify(feature.comingsoon) }
+
+              <p className={`${feature.comingsoon}`}>{feature.body}</p>
+
             </div>
           </div>
         )

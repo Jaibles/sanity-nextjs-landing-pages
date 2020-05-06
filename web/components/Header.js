@@ -92,7 +92,7 @@ class Header extends Component {
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
             <li className={styles.navItem}>
-              <AnchorLink className={styles.this} href='#features'>Features</AnchorLink>
+              <AnchorLink className={styles.this} href='#features'>How it works</AnchorLink>
             </li>
             <li className={styles.navItem}>
               <AnchorLink className={styles.this} href='#pricing'>Pricing</AnchorLink>

@@ -55,3 +55,6 @@ p {
   font-size: var(--font-small-size);
   margin: 0;
 }
+p.false {
+  display: none;
+}

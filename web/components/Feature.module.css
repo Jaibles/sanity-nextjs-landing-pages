@@ -11,3 +11,7 @@
 .featureText {
   margin-top: 12px;
 }
+
+p.false {
+  display: none;
+}
