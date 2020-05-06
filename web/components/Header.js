@@ -4,7 +4,8 @@ import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import styles from './Header.module.css'
-// import HamburgerIcon from './icons/Hamburger'
+import HamburgerIcon from './icons/Hamburger'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 class Header extends Component {
   state = {showNav: false}
@@ -20,7 +21,8 @@ class Header extends Component {
     title: PropTypes.string,
     navItems: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        navText: PropTypes.string,
         slug: PropTypes.shape({
           current: PropTypes.string
         }).isRequired
@@ -87,12 +89,17 @@ class Header extends Component {
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
         </h1>
-        {/*
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
+            <li className={styles.navItem}>
+              <AnchorLink className={styles.this} href='#features'>Features</AnchorLink>
+            </li>
+            <li className={styles.navItem}>
+              <AnchorLink className={styles.this} href='#pricing'>Pricing</AnchorLink>
+            </li>
             {navItems &&
               navItems.map(item => {
-                const {slug, title, _id} = item
+                const {slug, navText, _id} = item
                 const isActive =
                   router.pathname === '/LandingPage' && router.query.slug === slug.current
                 return (
@@ -105,7 +112,7 @@ class Header extends Component {
                       as={`/${slug.current}`}
                       prefetch
                     >
-                      <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
+                      <a data-is-active={isActive ? 'true' : 'false'}>{navText}</a>
                     </Link>
                   </li>
                 )
@@ -115,7 +122,6 @@ class Header extends Component {
             <HamburgerIcon className={styles.hamburgerIcon} />
           </button>
         </nav>
-        */}
       </div>
     )
   }

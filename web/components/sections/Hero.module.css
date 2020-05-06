@@ -26,11 +26,12 @@
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   margin: 0;
+  padding-top: 2rem;
   text-align: center;
   @media (--media-min-medium) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
-    padding-top: 2rem
+    padding-top: 4rem
   }
 }
 

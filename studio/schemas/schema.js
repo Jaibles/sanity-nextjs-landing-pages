@@ -19,6 +19,7 @@ import embedHTML from './objects/embedHTML'
 import figure from './objects/figure'
 import internalLink from './objects/internalLink'
 import link from './objects/link'
+import linkText from './objects/linkText'
 import portableText from './objects/portableText'
 import simplePortableText from './objects/simplePortableText'
 
@@ -51,6 +52,7 @@ export default createSchema({
     venue,
     internalLink,
     link,
+    linkText,
     mailchimp,
     page,
     portableText,

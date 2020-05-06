@@ -153,7 +153,7 @@ class LandingPage extends Component {
         />
         {content && <RenderSections sections={content} />}
         {features && (
-          <div className={styles.container}>
+          <div id='features' className={styles.container}>
             <div className={styles.textCenter}>
               <h2>{featureTitle}</h2>
             </div>
@@ -163,7 +163,7 @@ class LandingPage extends Component {
           </div>
         )}
         {customers && (
-          <div className={styles.bg}>
+          <div id='customers' className={styles.bg}>
             <div className={styles.container}>
               <div className={styles.textCenter}>
                 <h2>{customersTitle}</h2>
@@ -176,7 +176,7 @@ class LandingPage extends Component {
           </div>
         )}
         {plans && (
-          <div className={styles.container}>
+          <div id='pricing' className={styles.container}>
             <div className={styles.textCenter}>
               <h2>{plansTitle}</h2>
               <p>{plansSubTitle}</p>
