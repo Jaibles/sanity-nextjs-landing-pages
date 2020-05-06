@@ -1,18 +1,12 @@
-/* CustomerMap.*/
 .customer {
-  composes: center from "../styles/shared.module.css";
   border: 2px solid #000;
   border-radius: 5px;
-  margin: 16px;
+  margin: 8px;
   background: var(--color-white);
 }
 
 .container {
   composes: narrow-container from "../styles/shared.module.css";
-}
-
-.figure {
-  margin: 0;
 }
 
 .mapDetails {
@@ -21,11 +15,8 @@
 
 .mapImageContainer {
   padding: 0;
+  width: 100%;
   height: 152px;
   overflow: hidden;
   border-bottom: var(--border-default);
-}
-
-.quote {
-  margin: 0 0 0 1rem;
 }

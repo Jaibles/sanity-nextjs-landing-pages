@@ -1,38 +1,32 @@
-// Plan.js
+import PropTypes from 'prop-types'
 import React, {Component} from 'react'
-import client from '../client'
 import styles from './Plan.module.css'
 
 class Plan extends Component {
-  constructor () {
-    super()
-    this.state = {
-      plans: []
-    }
-  }
-  componentDidMount () {
-    const query = '*[_type == "plan"]'
-    const params = {}
-    client.fetch(query, params).then((results) => {
-      if (results) {
-        this.setState({plans: results})
-      }
-    })
+  static propTypes = {
+    plans: PropTypes.any
   }
   render () {
+    const {
+      plans = []
+    } = this.props
     return (
-      <>
-        {
-          this.state.plans.map(plan => (
-            <div key={plan} className={styles.container}>
-              <div className={styles.plan}>
-                <div><h5>{plan.name}</h5></div>
-                <div><h2>{plan.priceAnnually}</h2></div>
-              </div>
-            </div>
-          ))
+      <div>
+        {plans.map(plan =>
+          <div key={plan} className={styles.plan}>
+            <div className={styles.planName}>{plan.name}</div>
+            <div className={styles.planPriceAnnually}>{plan.priceAnnually}</div>
+            <div id='example' className={styles.planPriceMonthly}>{plan.priceMonthly}</div>
+            {plan.included
+              ? plan.included.map(message => {
+                return <p className={styles.planIncluded} key={message}>{message}</p>
+              })
+              : null
+            }
+          </div>
+        )
         }
-      </>
+      </div>
     )
   }
 }

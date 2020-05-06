@@ -1,26 +1,37 @@
-/* Plan.*/
 .plan {
-  border: 2px solid #000;
-  border-radius: 3px;
-  text-align: center;
-  padding: 32px;
+  border: var(--border-default);
+  border-radius: var(--border-radius-sm);
+  padding: 40px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 333%;
 }
 
-.container {
+.plan:first-of-type, .plan:nth-child(3) {
+  border: var(--border-light);
 }
 
-.grid {
-  border: 1px solid red;
+.planPriceAnnually,
+.planPriceMonthly {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 4px 0 12px;
+  display: block;
 }
 
-.figure {
-  margin: 0;
+.planPriceMonthly {
+  display: none;
 }
 
-.photo {
-  width: 100px;
+.planPriceMonthly.isVisible {
+  display: none;
 }
 
-.quote {
-  margin: 0 0 0 1rem;
+.planName {
+  font-size: 16px;
+}
+
+.planIncluded {
+  margin: 16px 0;
 }

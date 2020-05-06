@@ -1,16 +1,10 @@
 @import "../styles/custom-media.css";
 
-.root {
-  composes: center from "../styles/shared.module.css";
-  margin-bottom: 4rem;
-  margin-top: 2rem;
-}
-
 .textCenter {
   text-align: center;
 }
 
-.dark {
+.darkText {
   color: var(--color-black)
 }
 
@@ -33,33 +27,37 @@
 }
 
 /* Features */
-.features {
+.features > div {
   display: grid;
-  grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
   margin: 3rem 0 8rem;
 
   @media (--media-max-medium) {
     grid-template-columns: minmax(200px,1fr);
-    margin: 3rem 1rem 8rem;
+    margin: 3rem 0 8rem;
   }
 }
 
-.feature {
-  border: var(--border-default);
-  border-radius: var(--border-radius-sm);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+/* Customers */
+.customers > div {
+  display: grid;
+  grid-template-columns:  minmax(33%,1fr) minmax(33%,1fr) minmax(33%,1fr);
+  margin: 3rem 0 2rem;
 
-.featureText {
-  margin-top: 12px;
+  @media (--media-max-medium) {
+    display: flex;
+    padding-left: 16px;
+    grid-template-columns: 100%;
+    margin: 3rem 1rem 2rem;
+    width: 100vw;
+    margin-left: -1.5rem;
+    overflow-x: auto;
+  }
 }
 
 /* Plans */
-.plans {
+.plans > div {
   margin: 2rem 0 2rem;
   display: flex;
   flex-direction: row;
@@ -67,62 +65,6 @@
 
   @media (--media-max-medium) {
     flex-direction: column;
-    margin: 3rem 1rem 8rem;
+    margin: 3rem 0 8rem;
   }
-}
-
-.plan {
-  border: var(--border-default);
-  border-radius: var(--border-radius-sm);
-  padding: 32px 24px;
-  margin: 8px;
-  width: 100%;
-}
-
-.plan:first-of-type, .plan:nth-child(3) {
-  border: var(--border-light);
-}
-
-.planPrice {
-  font-size: 30px;
-  font-weight: 700;
-  margin: 4px 0 12px;
-}
-
-.planName {
-  font-size: 16px;
-}
-
-.planIncluded {
-  margin: 16px 0;
-}
-
-/* Customers */
-.customers {
-  display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-  margin: 3rem 0 2rem;
-
-  @media (--media-max-medium) {
-    grid-template-columns: 100%;
-    margin: 3rem 1rem 8rem;
-  }
-}
-
-.customer {
-  border: 2px solid #000;
-  border-radius: 5px;
-  margin: 8px;
-  background: var(--color-white);
-}
-
-.mapDetails {
-  padding: 16px;
-}
-
-.mapImageContainer {
-  padding: 0;
-  height: 152px;
-  overflow: hidden;
-  border-bottom: var(--border-default);
 }
