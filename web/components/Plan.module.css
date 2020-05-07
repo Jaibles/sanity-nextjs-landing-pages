@@ -1,23 +1,40 @@
 .plan {
   border: var(--border-default);
   border-radius: var(--border-radius-sm);
-  padding: 40px;
   margin: 8px;
   display: flex;
   flex-direction: column;
   flex: 1 1 333%;
+  transition: all ease .2s;
 }
 
 .plan:first-of-type, .plan:nth-child(3) {
   border: var(--border-light);
+  transform: scale(0.96);
 }
+
+.plan:first-of-type:hover,
+.plan:nth-child(3):hover {
+  transform: scale(1);
+}
+
 
 .planPriceAnnually,
 .planPriceMonthly {
   font-size: 30px;
   font-weight: 700;
-  margin: 4px 0 12px;
+  margin: 32px 0 12px;
   display: block;
+}
+
+.plan:nth-child(2) .planPriceAnnually:after {
+  content: '/month';
+  position: absolute;
+  margin: 18px 0 0;
+  color: var(--color-gray);
+  font-size: 12px;
+  font-family: var(--font-family-mono);
+  font-weight: normal;
 }
 
 .planPriceMonthly {
@@ -29,13 +46,21 @@
 }
 
 .planName {
-  font-size: 16px;
+  composes: textMonoWhite from "../styles/shared.module.css";
+  background: var(--color-black);
+  padding: 4px 0 6px;
+}
+
+.plan:first-of-type .planName,
+.plan:nth-child(3)  .planName {
+  background: var(--color-light-gray);
+  color: var(--color-black);
 }
 
 .planIncluded {
   margin: 16px 0;
+  composes: textMono from "../styles/shared.module.css";
 }
-
 
 .plan:first-of-type .btn,
 .plan:nth-child(3)  .btn {
@@ -45,11 +70,13 @@
 
 .btn {
   margin-top: 24px;
+  margin: 32px;
   text-decoration: none;
   padding: 12px;
-  background: var(--color-primary);
+  background: var(--color-black);
   color: #fff;
   border-radius: var(--border-radius-sm);
   font-weight: 700;
   font-size: var(--font-small-size);
+  cursor: pointer;
 }

@@ -4,7 +4,7 @@
 
   --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-family-mono:
-    "Space Mono",
+    "Roboto Mono",
     "SFMono-Regular",
     Consolas,
     "Liberation Mono",
@@ -13,13 +13,15 @@
     monospace;
 
   --color-primary: #EC6644;
+  --color-primary-light: #EC6644;
+  --color-accent: #36A18B;
+  --color-accent-light: #E4F2EF;
   --color-black: #1A1A1A;
   --color-dark-gray: #878787;
-  --color-gray: #697a90;
+  --color-gray: #697a90; /*text*/
   --color-light-gray: #E3E3E3;
   --color-very-light-gray: #F4F2EC;
   --color-white: #fff;
-  --color-accent: #156dff;
 
   --border-default: 2px solid var(--color-black);
   --border-light: 2px solid var(--color-light-gray);
@@ -29,7 +31,7 @@
   --unit: 16;
   --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
   --font-micro-line-height: calc(12 / 10); /* 12px */
-  --font-small-size: calc(13 / var(--unit) * 1rem); /* 13px */
+  --font-small-size: calc(14 / var(--unit) * 1rem); /* 13px */
   --font-small-line-height: calc(21 / 14); /* 21px */
   --font-base-size: 1em; /* 16px */
   --font-base-line-height: calc(24 / var(--unit)); /* 24px */
@@ -40,12 +42,12 @@
   --font-title3-line-height: calc(30 / 21); /* 30px */
   --font-title2-size: calc(28 / var(--unit) * 1rem); /* 24px */
   --font-title2-line-height: calc(33 / 24); /* 33px */
-  --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
-  --font-title1-line-height: calc(57 / 49); /* 57px */
+  --font-title1-size: calc(54 / var(--unit) * 1rem); /* 49px */
+  --font-title1-line-height: calc(57 / 54); /* 57px */
 
   /* Widths */
   --width-x-small: 20em;
-  --width-small: 40em;
+  --width-small: 45em;
   --width-medium: 60em;
   --width-large: 80em;
   --width-x-large: 100em;

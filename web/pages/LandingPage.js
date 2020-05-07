@@ -167,7 +167,7 @@ class LandingPage extends Component {
             <div className={styles.container}>
               <div className={styles.textCenter}>
                 <h2>{customersTitle}</h2>
-                <p>{customersSubTitle}</p>
+                <div className={styles.textMono}>{customersSubTitle}</div>
               </div>
               <div className={styles.customers}>
                 <Customer customers={customers} />
@@ -179,12 +179,12 @@ class LandingPage extends Component {
           <div id='pricing' className={styles.container}>
             <div className={styles.textCenter}>
               <h2>{plansTitle}</h2>
-              <p>{plansSubTitle}</p>
+              <div className={styles.textMono}>{plansSubTitle}</div>
             </div>
             <div className={styles.toggleContainer}>
-              <p>Monthly</p>
+              <span className={styles.textMono}>Pay Monthly</span>
               <Toggle />
-              <p className={styles.darkText}>Annual</p>
+              <span className={styles.textMonoBlack}>Pay Annually</span>
             </div>
             <div className={styles.plans}>
               <Plan plans={plans} />

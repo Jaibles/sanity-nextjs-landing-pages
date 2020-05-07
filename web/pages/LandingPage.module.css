@@ -26,6 +26,22 @@
   overflow-x: scroll;
 }
 
+.textMono {
+  composes: textMono from "../styles/shared.module.css";
+}
+
+.textMonoBlack {
+  composes: textMonoBlack from "../styles/shared.module.css";
+
+  @nest &:after {
+    content: '(save 10%!)';
+    position: absolute;
+    margin: 2px 0 0 6px;
+    color: var(--color-primary);
+    font-size: 12px;
+  }
+}
+
 /* Features */
 .features > div {
   display: grid;

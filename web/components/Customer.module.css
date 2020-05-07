@@ -4,6 +4,7 @@
   margin: 8px;
   background: var(--color-white);
   max-width: 70vw;
+  overflow: hidden;
 }
 
 .container {
@@ -19,5 +20,8 @@
   width: 100%;
   height: 152px;
   overflow: hidden;
-  border-bottom: var(--border-default);
+}
+
+.mapBody {
+  composes: textMono from "../styles/shared.module.css";
 }

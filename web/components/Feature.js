@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import client from '../client'
 import styles from './Feature.module.css'
 import imageUrlBuilder from '@sanity/image-url'
+import Tag from '../components/Tag'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
@@ -17,10 +18,12 @@ class Feature extends Component {
     const {
       features = []
     } = this.props
+
     return (
       <div>
         {features.map(feature =>
           <div key={feature.key} className={styles.feature}>
+            { feature.comingsoon ? <Tag /> : null }
             {feature.icon && (
               <div>
                 <img
@@ -32,7 +35,7 @@ class Feature extends Component {
             )}
             <div className={styles.featureText}>
               <h3>{feature.title}{feature.key}</h3>
-              <p>{feature.body}</p>
+              <p className={styles.featureBody}>{feature.body}</p>
             </div>
           </div>
         )

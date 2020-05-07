@@ -12,8 +12,19 @@ class ToggleSwitch extends Component {
     return (
       <>
         <div className={styles.onoffswitch}>
-          <input type='checkbox' name='onoffswitch' className={styles.onoffswitchCheckbox} id='myonoffswitch' />
-          <label className={styles.onoffswitchLabel} htmlFor='myonoffswitch' />
+          <input
+            // checked={isOn}
+            // onChange={handleToggle}
+            type='checkbox'
+            name='onoffswitch'
+            className={styles.onoffswitchCheckbox}
+            id={`react-switch-new`}
+          />
+          <label
+            className={styles.onoffswitchLabel}
+            htmlFor={`react-switch-new`}
+          />
+          <span className={`react-switch-button`} />
         </div>
       </>
     )

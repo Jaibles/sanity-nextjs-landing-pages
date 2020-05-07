@@ -20,7 +20,7 @@
   @nest & > a {
     display: block;
     text-decoration: none;
-    color: inherit;
+    color: var(--color-gray);
     margin: 0 8px;
   }
 }
@@ -28,6 +28,7 @@
 .text {
   display: flex;
   align-items: center;
+  color: var(--color-gray);
 
   @nest & p {
   }

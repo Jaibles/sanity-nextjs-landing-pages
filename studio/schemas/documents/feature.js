@@ -18,6 +18,11 @@ export default {
       name: 'icon',
       type: 'figure',
       title: 'Icon of the feature'
+    },
+    {
+      title: 'Coming soon',
+      name: 'comingsoon',
+      type: 'boolean'
     }
   ],
   preview: {

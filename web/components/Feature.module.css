@@ -6,8 +6,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .featureText {
   margin-top: 12px;
+}
+
+.featureBody {
+  composes: textMono from "../styles/shared.module.css";
 }
