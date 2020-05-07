@@ -6,6 +6,7 @@
   flex-direction: column;
   flex: 1 1 333%;
   transition: all ease .2s;
+  justify-content: space-between;
 }
 
 .plan:first-of-type, .plan:nth-child(3) {
@@ -18,7 +19,6 @@
   transform: scale(1);
 }
 
-
 .planPriceAnnually,
 .planPriceMonthly {
   font-size: 30px;
@@ -27,7 +27,8 @@
   display: block;
 }
 
-.plan:nth-child(2) .planPriceAnnually:after {
+.plan:nth-child(2) .planPriceAnnually:after,
+.plan:nth-child(2) .planPriceMonthly:after {
   content: '/month';
   position: absolute;
   margin: 18px 0 0;
@@ -38,10 +39,12 @@
 }
 
 .planPriceMonthly {
-  display: none;
 }
 
-.planPriceMonthly.isVisible {
+.planPriceAnnually {
+}
+
+.none {
   display: none;
 }
 
@@ -63,9 +66,14 @@
 }
 
 .plan:first-of-type .btn,
-.plan:nth-child(3)  .btn {
+.plan:nth-child(3) .btn {
   background: var(--color-light-gray);
   color: var(--color-black);
+}
+
+.plan:nth-child(3) .planPriceAnnually,
+.plan:nth-child(3) .planPriceMonthly {
+  font-size: 20px;
 }
 
 .btn {

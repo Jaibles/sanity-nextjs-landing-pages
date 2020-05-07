@@ -7,14 +7,16 @@ Note: id is required for ToggleSwitch component to function. Name, currentValue,
 Usage: <ToggleSwitch id='id' onChange={styles.function (e) { console.log('Checkbox Current State: ' + e.target.checked); }} />
 */
 
-class ToggleSwitch extends Component {
+class Toggle extends Component {
   render () {
     return (
       <>
         <div className={styles.onoffswitch}>
+          {/* XXX this.props.isToggleOn -> so we can access the parent state 'isToggleOn' */}
+          {/* XXX this.props.toggle -> so we can call the parent function */}
           <input
-            // checked={isOn}
-            // onChange={handleToggle}
+            checked={this.props.isToggleOn}
+            onChange={this.props.toggle}
             type='checkbox'
             name='onoffswitch'
             className={styles.onoffswitchCheckbox}
@@ -31,4 +33,4 @@ class ToggleSwitch extends Component {
   }
 }
 
-export default ToggleSwitch
+export default Toggle

@@ -8,15 +8,16 @@ class Plan extends Component {
   }
   render () {
     const {
-      plans = []
+      plans
     } = this.props
     return (
       <div>
         {plans.map(plan =>
           <div key={plan} className={styles.plan}>
             <div className={styles.planName}>{plan.name}</div>
-            <div className={styles.planPriceAnnually}>{plan.priceAnnually}</div>
-            <div className={styles.planPriceMonthly}>{plan.priceMonthly}</div>
+            {/* XXX I've left the classes for you to fix to your liking :) */}
+            <div className={this.props.isToggleOn ? styles.none : styles.planPriceAnnually }>{plan.priceAnnually}</div>
+            <div className={this.props.isToggleOn ? styles.planPriceMonthly : styles.none}>{plan.priceMonthly}</div>
             {plan.included
               ? plan.included.map(message => {
                 return <div className={styles.planIncluded} key={message}>{message}</div>
