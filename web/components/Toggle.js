@@ -12,8 +12,11 @@ class Toggle extends Component {
     return (
       <>
         <div className={styles.onoffswitch}>
+          {/* XXX this.props.isToggleOn -> so we can access the parent state 'isToggleOn' */}
+          {/* XXX this.props.toggle -> so we can call the parent function */}
           <input
-            checked={this.props.isOn}
+            checked={this.props.isToggleOn}
+            onChange={this.props.toggle}
             type='checkbox'
             name='onoffswitch'
             className={styles.onoffswitchCheckbox}
