@@ -11,6 +11,27 @@
   text-align: center;
 }
 
+.textMono {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-small-size);
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.textMonoBlack {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-small-size);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.textMonoWhite {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-small-size);
+  color: var(--color-white);
+  margin: 0;
+}
+
 .container {
   max-width: var(--wide-container, 80rem);
   margin: 0 auto;

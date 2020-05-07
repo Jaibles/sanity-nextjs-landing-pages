@@ -96,7 +96,11 @@
     display: block;
     position: relative;
     padding: 1.5rem 0.5rem;
-    color: var(--color-dark-gray);
+    color: var(--color-black);
+
+    @nest &:hover {
+      color: var(--color-primary);
+    }
 
     @nest &[data-is-active="true"] {
       color: var(--color-primary);

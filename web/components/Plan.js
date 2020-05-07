@@ -19,7 +19,7 @@ class Plan extends Component {
             <div className={styles.planPriceMonthly}>{plan.priceMonthly}</div>
             {plan.included
               ? plan.included.map(message => {
-                return <p className={styles.planIncluded} key={message}>{message}</p>
+                return <div className={styles.planIncluded} key={message}>{message}</div>
               })
               : null
             }

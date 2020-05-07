@@ -92,10 +92,10 @@ class Header extends Component {
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
             <li className={styles.navItem}>
-              <AnchorLink className={styles.this} href='#features'>How it works</AnchorLink>
+              <AnchorLink className={styles.this} href='#features' offset='50'>Features</AnchorLink>
             </li>
             <li className={styles.navItem}>
-              <AnchorLink className={styles.this} href='#pricing'>Pricing</AnchorLink>
+              <AnchorLink className={styles.this} href='#pricing' offset='50'>Pricing</AnchorLink>
             </li>
             {navItems &&
               navItems.map(item => {

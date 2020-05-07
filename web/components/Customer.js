@@ -33,7 +33,7 @@ class Customer extends Component {
             )}
             <div className={styles.mapDetails}>
               <h5>{customer.mapTitle}{customer.key}</h5>
-              <p>{customer.customer}</p>
+              <div className={styles.mapBody}>{customer.customer}</div>
             </div>
           </div>
         )
