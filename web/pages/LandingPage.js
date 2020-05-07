@@ -33,6 +33,10 @@ const pageQuery = groq`
 `
 
 class LandingPage extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {isOn: true}
+  }
   static propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
@@ -183,11 +187,11 @@ class LandingPage extends Component {
             </div>
             <div className={styles.toggleContainer}>
               <span className={styles.textMono}>Pay Monthly</span>
-              <Toggle />
+              <Toggle isOn={this.state.isOn} />
               <span className={styles.textMonoBlack}>Pay Annually</span>
             </div>
             <div className={styles.plans}>
-              <Plan plans={plans} />
+              <Plan plans={plans} isToggletrue={this.state.isOn} />
             </div>
           </div>
         )}

@@ -6,6 +6,7 @@
   flex-direction: column;
   flex: 1 1 333%;
   transition: all ease .2s;
+  justify-content: space-between;
 }
 
 .plan:first-of-type, .plan:nth-child(3) {
@@ -18,6 +19,9 @@
   transform: scale(1);
 }
 
+.planPriceAnnually {
+  border: 1px solid blue;
+}
 
 .planPriceAnnually,
 .planPriceMonthly {
@@ -38,7 +42,7 @@
 }
 
 .planPriceMonthly {
-  display: none;
+  border: 1px solid red;
 }
 
 .planPriceMonthly.isVisible {
@@ -63,9 +67,14 @@
 }
 
 .plan:first-of-type .btn,
-.plan:nth-child(3)  .btn {
+.plan:nth-child(3) .btn {
   background: var(--color-light-gray);
   color: var(--color-black);
+}
+
+.plan:nth-child(3) .planPriceAnnually,
+.plan:nth-child(3) .planPriceMonthly {
+  font-size: 20px;
 }
 
 .btn {
