@@ -33,10 +33,14 @@ const pageQuery = groq`
 `
 
 class LandingPage extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {isOn: true}
+  constructor(props) {
+    super(props)  // XXX react makes us do this
+    this.state = {
+      isToggleOn: true,
+    } // XXX so we can have variables we can pass to other Components
+    this.toggle = this.toggle.bind(this) // XXX this "binds" the function to this component
   }
+
   static propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
@@ -84,6 +88,12 @@ class LandingPage extends Component {
     }
 
     return null
+  }
+
+  toggle = () => {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
   }
 
   render () {
@@ -187,11 +197,11 @@ class LandingPage extends Component {
             </div>
             <div className={styles.toggleContainer}>
               <span className={styles.textMono}>Pay Monthly</span>
-              <Toggle isOn={this.state.isOn} />
+              <Toggle isToggleOn={this.state.isToggleOn} toggle={this.toggle}/> {/* pass the state 'isToggleOn' AND the function toggle() to the Toggle component */}
               <span className={styles.textMonoBlack}>Pay Annually</span>
             </div>
             <div className={styles.plans}>
-              <Plan plans={plans} isToggletrue={this.state.isOn} />
+              <Plan plans={plans} isToggleOn={this.state.isToggleOn}/> {/* pass the state 'isToggleOn' to the Plan component */}
             </div>
           </div>
         )}
