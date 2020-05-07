@@ -19,10 +19,6 @@
   transform: scale(1);
 }
 
-.planPriceAnnually {
-  border: 1px solid blue;
-}
-
 .planPriceAnnually,
 .planPriceMonthly {
   font-size: 30px;
@@ -31,7 +27,8 @@
   display: block;
 }
 
-.plan:nth-child(2) .planPriceAnnually:after {
+.plan:nth-child(2) .planPriceAnnually:after,
+.plan:nth-child(2) .planPriceMonthly:after {
   content: '/month';
   position: absolute;
   margin: 18px 0 0;
@@ -42,10 +39,12 @@
 }
 
 .planPriceMonthly {
-  border: 1px solid red;
 }
 
-.planPriceMonthly.isVisible {
+.planPriceAnnually {
+}
+
+.none {
   display: none;
 }
 
