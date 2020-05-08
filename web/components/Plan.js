@@ -15,7 +15,6 @@ class Plan extends Component {
         {plans.map(plan =>
           <div key={plan} className={styles.plan}>
             <div className={styles.planName}>{plan.name}</div>
-            {/* XXX I've left the classes for you to fix to your liking :) */}
             <div className={this.props.isToggleOn ? styles.none : styles.planPriceAnnually }>{plan.priceAnnually}</div>
             <div className={this.props.isToggleOn ? styles.planPriceMonthly : styles.none}>{plan.priceMonthly}</div>
             {plan.included

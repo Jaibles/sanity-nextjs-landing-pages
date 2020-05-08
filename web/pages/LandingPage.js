@@ -36,7 +36,7 @@ class LandingPage extends Component {
   constructor(props) {
     super(props)  // XXX react makes us do this
     this.state = {
-      isToggleOn: true,
+      isToggleOn: false,
     } // XXX so we can have variables we can pass to other Components
     this.toggle = this.toggle.bind(this) // XXX this "binds" the function to this component
   }
@@ -195,13 +195,9 @@ class LandingPage extends Component {
               <h2>{plansTitle}</h2>
               <div className={styles.textMono}>{plansSubTitle}</div>
             </div>
-            <div className={styles.toggleContainer}>
-              <span className={styles.textMono}>Pay Monthly</span>
-              <Toggle isToggleOn={this.state.isToggleOn} toggle={this.toggle}/> {/* pass the state 'isToggleOn' AND the function toggle() to the Toggle component */}
-              <span className={styles.textMonoBlack}>Pay Annually</span>
-            </div>
+            <Toggle isToggleOn={this.state.isToggleOn} toggle={this.toggle} /> {/* pass the state 'isToggleOn' AND the function toggle() to the Toggle component */}
             <div className={styles.plans}>
-              <Plan plans={plans} isToggleOn={this.state.isToggleOn}/> {/* pass the state 'isToggleOn' to the Plan component */}
+              <Plan plans={plans} isToggleOn={this.state.isToggleOn} /> {/* pass the state 'isToggleOn' to the Plan component */}
             </div>
           </div>
         )}

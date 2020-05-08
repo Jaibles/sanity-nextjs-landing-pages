@@ -5,14 +5,7 @@
 }
 
 .darkText {
-  color: var(--color-black)
-}
-
-.toggleContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 0;
+  color: var(--color-neutral-900)
 }
 
 .container {

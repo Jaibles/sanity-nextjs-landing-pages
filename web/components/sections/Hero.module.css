@@ -4,7 +4,7 @@
 .root {
   composes: center from '../../styles/shared.module.css';
   position: relative;
-  color: var(--color-black, #000);
+  color: var(--color-neutral-900, #000);
   padding-bottom: 2rem;
 
   @media (--media-min-medium) {

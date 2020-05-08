@@ -32,7 +32,7 @@
   content: '/month';
   position: absolute;
   margin: 18px 0 0;
-  color: var(--color-gray);
+  color: var(--color-neutral-500);
   font-size: 12px;
   font-family: var(--font-family-mono);
   font-weight: normal;
@@ -50,14 +50,14 @@
 
 .planName {
   composes: textMonoWhite from "../styles/shared.module.css";
-  background: var(--color-black);
+  background: var(--color-neutral-900);
   padding: 4px 0 6px;
 }
 
 .plan:first-of-type .planName,
 .plan:nth-child(3)  .planName {
-  background: var(--color-light-gray);
-  color: var(--color-black);
+  background: var(--color-neutral-500);
+  color: var(--color-neutral-900);
 }
 
 .planIncluded {
@@ -67,8 +67,8 @@
 
 .plan:first-of-type .btn,
 .plan:nth-child(3) .btn {
-  background: var(--color-light-gray);
-  color: var(--color-black);
+  background: var(--color-neutral-500);
+  color: var(--color-neutral-900);
 }
 
 .plan:nth-child(3) .planPriceAnnually,
@@ -81,7 +81,7 @@
   margin: 32px;
   text-decoration: none;
   padding: 12px;
-  background: var(--color-black);
+  background: var(--color-neutral-900);
   color: #fff;
   border-radius: var(--border-radius-sm);
   font-weight: 700;

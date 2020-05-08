@@ -12,19 +12,24 @@
     Courier,
     monospace;
 
-  --color-primary: #EC6644;
-  --color-primary-light: #EC6644;
-  --color-accent: #36A18B;
-  --color-accent-light: #E4F2EF;
-  --color-black: #1A1A1A;
-  --color-dark-gray: #878787;
-  --color-gray: #697a90; /*text*/
-  --color-light-gray: #E3E3E3;
-  --color-very-light-gray: #F4F2EC;
+  /*brand*/
+  --color-primary: #36A18B;
+  --color-primary-light: #E4F2EF;
+  --color-accent: #F5866B;
+  --color-accent-light: #FCD8D3;
+  --color-accent-2: #006EB7;
+  --color-accent-2-light: #D9E9F4;
+
+  /*neutrals*/
+  --color-neutral-100: #F9F8F5; /*bg-light*/
+  --color-neutral-300: #F4F2EC; /*bg + map-country*/
+  --color-neutral-500: #DFE4DA; /*darker-bg*/
+  --color-neutral-700: #888888; /*muted-text*/
+  --color-neutral-900: #222222;
   --color-white: #fff;
 
-  --border-default: 2px solid var(--color-black);
-  --border-light: 2px solid var(--color-light-gray);
+  --border-default: 2px solid var(--color-neutral-900);
+  --border-light: 2px solid var(--color-neutral-500);
   --border-radius-sm: 3px;
 
   /* Typography */
