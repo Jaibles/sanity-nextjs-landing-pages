@@ -18,7 +18,7 @@ class Customer extends Component {
       customers = []
     } = this.props
     return (
-      <div>
+      <>
         {customers.map(customer =>
           <div key={customer.key} className={styles.customer}>
             {customer.image && (
@@ -38,7 +38,7 @@ class Customer extends Component {
           </div>
         )
         }
-      </div>
+      </>
     )
   }
 }

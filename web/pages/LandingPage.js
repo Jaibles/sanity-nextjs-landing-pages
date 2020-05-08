@@ -183,8 +183,10 @@ class LandingPage extends Component {
                 <h2>{customersTitle}</h2>
                 <div className={styles.textMono}>{customersSubTitle}</div>
               </div>
-              <div className={styles.customers}>
-                <Customer customers={customers} />
+              <div className={styles.customersWrapper}>
+                <div className={styles.customers}>
+                  <Customer customers={customers} />
+                </div>
               </div>
             </div>
           </div>
