@@ -14,14 +14,14 @@
 .textMono {
   font-family: var(--font-family-mono);
   font-size: var(--font-small-size);
-  color: var(--color-gray);
+  color: var(--color-neutral-700);
   margin: 0;
 }
 
 .textMonoBlack {
   font-family: var(--font-family-mono);
   font-size: var(--font-small-size);
-  color: var(--color-black);
+  color: var(--color-neutral-900);
   margin: 0;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .background {
-  background: var(--color-very-light-gray);
+  background: var(--color-neutral-100);
 }
 
 .normal-container {

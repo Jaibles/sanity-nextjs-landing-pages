@@ -5,14 +5,7 @@
 }
 
 .darkText {
-  color: var(--color-black)
-}
-
-.toggleContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 0;
+  color: var(--color-neutral-900)
 }
 
 .container {
@@ -56,19 +49,25 @@
 }
 
 /* Customers */
-.customers > div {
+.customersWrapper {
   display: grid;
-  grid-template-columns:  minmax(33%,1fr) minmax(33%,1fr) minmax(33%,1fr);
-  margin: 3rem 0 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
 
   @media (--media-max-medium) {
-    display: flex;
-    padding-left: 16px;
-    grid-template-columns: 100%;
-    margin: 3rem 1rem 2rem;
     width: 100vw;
-    margin-left: -1.5rem;
-    overflow-x: auto;
+    margin-left: -1rem;
+    overflow: auto;
+  }
+}
+
+.customersWrapper > div {
+  display: grid;
+  grid-template-columns: minmax(33%,1fr) minmax(33%,1fr) minmax(33%,1fr);
+  @media (--media-max-medium) {
+    display: flex;
+    padding-left: 1rem;
   }
 }
 
