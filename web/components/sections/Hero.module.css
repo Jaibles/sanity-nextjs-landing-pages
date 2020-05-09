@@ -60,6 +60,13 @@
   justify-content: center;
 }
 
+.ctas > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .ctas > *:not(:first-child) {
   margin-left: 1rem;
 }

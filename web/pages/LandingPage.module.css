@@ -19,6 +19,24 @@
   overflow-x: scroll;
 }
 
+.svgMap {
+  margin: 3rem 0 4rem;
+  width: 100vw;
+
+  @media (--media-max-medium) {
+    margin-top: 0;
+  }
+}
+
+svg path.that {
+  fill: var(--color-primary) !important;
+  opacity: 1;
+}
+
+svg path.those {
+  fill: var(--color-neutral-500) !important;
+  opacity: 1;
+}
 .textMono {
   composes: textMono from "../styles/shared.module.css";
 }

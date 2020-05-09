@@ -3,12 +3,18 @@
   display: block;
   border-radius: var(--border-radius-sm);
   background-color: var(--color-neutral-900);
-  padding: 1em 1.5em;
+  padding: 1em 1.8em;
   text-decoration: inherit;
   font-weight: 600;
   max-width: fit-content;
   transition: transform 50ms ease-in-out;
   transform: scale(1);
+}
+
+.textMono {
+  composes: textMono from "../styles/shared.module.css";
+  margin-top: 1rem;
+  font-size: 13px;
 }
 
 .button:hover {
