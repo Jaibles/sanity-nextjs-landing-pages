@@ -5,6 +5,8 @@ import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import Layout from '../components/Layout'
 import Toggle from '../components/Toggle'
+import Map from '../components/Map'
+import MapToggle from '../components/MapToggle'
 import client from '../client'
 import RenderSections from '../components/RenderSections'
 import Feature from '../components/Feature'
@@ -33,12 +35,14 @@ const pageQuery = groq`
 `
 
 class LandingPage extends Component {
-  constructor(props) {
-    super(props)  // XXX react makes us do this
+  constructor (props) {
+    super(props)
     this.state = {
       isToggleOn: false,
+      selectedOption: styles.Brand
     } // XXX so we can have variables we can pass to other Components
     this.toggle = this.toggle.bind(this) // XXX this "binds" the function to this component
+    this.handleOptionChange = this.handleOptionChange.bind(this) // XXX this "binds" the function to this component
   }
 
   static propTypes = {
@@ -93,9 +97,14 @@ class LandingPage extends Component {
   toggle = () => {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
-    }));
+    }))
   }
 
+  handleOptionChange = (checkedStyle) => {
+    this.setState({
+      selectedOption: checkedStyle
+    })
+  }
   render () {
     const {
       title = 'Missing title',
@@ -166,6 +175,8 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
+        <Map selectedOption={this.state.selectedOption} />
+        <MapToggle selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange} />
         {features && (
           <div id='features' className={styles.container}>
             <div className={styles.textCenter}>

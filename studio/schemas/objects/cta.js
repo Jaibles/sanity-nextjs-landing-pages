@@ -33,6 +33,11 @@ export default {
       type: 'url',
       fieldset: 'link',
     },
+    {
+      title: 'Supporting text',
+      name: 'supportingText',
+      type: 'string'
+    }
   ],
   preview: {
     select: {

@@ -1,0 +1,10 @@
+@import "../styles/custom-media.css";
+
+.svgMap {
+  margin: 0rem 0 4rem;
+  width: 100vw;
+
+  @media (--media-max-medium) {
+    margin-top: 3rem 0 4rem;
+  }
+}

@@ -1,0 +1,125 @@
+@import "../styles/custom-media.css";
+
+.radioContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radioTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border: var(--border-light);
+  background: #fff;
+  border-radius: var(--border-radius-sm);
+  transition: transform 300ms ease;
+  padding: 8px 8px 6px;
+  box-sizing: border-box;
+  border-bottom: 4px solid var(--color-neutral-500);
+}
+
+.radioTile label {
+  font-size: 12px;
+  text-align: center;
+}
+
+.customRadioc {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin: -60px 0 5rem;
+
+  @media (--media-min-medium) {
+    margin: -120px 0 5rem;
+  }
+}
+
+.customRadio {
+  position: relative;
+  height: 6rem;
+  width: 6rem;
+  margin: 0.2rem;
+
+  @media (--media-max-medium) {
+    width: 6rem;
+  }
+}
+
+.onoffswitchCheckbox {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.onoffswitchCheckbox:checked + .radioTile {
+  border: var(--border-default);
+  border-bottom: 4px solid;
+}
+
+.onoffswitchCheckbox:checked + .radioTile .textMono {
+  color: #000;
+}
+
+.colorPanel {
+  height: 100%;
+  border-radius: 3px;
+  width: 100%;
+  background: red;
+  margin-bottom: 4px;
+}
+
+.colorPanelBrand {
+  background: var(--color-neutral-500) !important;
+}
+
+.colorDotBrand {
+  background: var(--color-primary) !important;
+}
+
+.colorPanelStandard {
+  background: var(--color-accent-2-light) !important;
+}
+
+.colorDotStandard {
+  background: var(--color-accent) !important;
+}
+
+.colorPanelGrey {
+  background: var(--color-neutral-100) !important;
+}
+
+.colorDotGrey {
+  background: var(--color-neutral-900) !important;
+}
+
+.colorPanelDark {
+  background: var(--color-neutral-900) !important;
+}
+
+.colorDotDark {
+  background: var(--color-accent-3) !important;
+}
+
+.colorDot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+.textMono {
+  composes: textMono from "../styles/shared.module.css";
+  font-size: 12px;
+}
