@@ -36,11 +36,13 @@ path.Brand:nth-of-type(3) {
 }
 
 path.Standard {/*sea*/
-  fill: var(--color-accent-2-light);
+  fill: #94d1ef;
 }
 
 path.Standard:nth-of-type(2) {
   fill: var(--color-neutral-200); /*country*/
+  stroke: var(--color-neutral-500);
+  stroke-width: 1px;
 }
 
 path.Standard:nth-of-type(3) {
@@ -60,11 +62,12 @@ path.Dark:nth-of-type(3) {
 }
 
 path.Grey {
-  fill: #fbfbfb; /*sea*/
+  fill: #e5e5e5; /*sea*/
 }
 
 path.Grey:nth-of-type(2) {
-  fill: #e5e5e5; /*country*/
+  fill: #fbfbfb; /*country*/
+
 }
 
 path.Grey:nth-of-type(3) {

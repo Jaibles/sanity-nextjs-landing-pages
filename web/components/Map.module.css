@@ -1,7 +1,7 @@
 @import "../styles/custom-media.css";
 
 .svgMap {
-  margin: 3rem 0 4rem;
+  margin: 0rem 0 4rem;
   width: 100vw;
 
   @media (--media-max-medium) {

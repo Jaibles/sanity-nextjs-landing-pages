@@ -1,8 +1,9 @@
+@import "../styles/custom-media.css";
+
 .radioContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -120px 0 5rem;
 }
 
 .radioTile {
@@ -29,6 +30,13 @@
 .customRadioc {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin: -60px 0 5rem;
+
+  @media (--media-min-medium) {
+    margin: -120px 0 5rem;
+  }
 }
 
 .customRadio {
@@ -36,6 +44,10 @@
   height: 6rem;
   width: 6rem;
   margin: 0.2rem;
+
+  @media (--media-max-medium) {
+    width: 6rem;
+  }
 }
 
 .onoffswitchCheckbox {
