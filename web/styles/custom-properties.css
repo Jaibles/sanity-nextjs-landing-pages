@@ -19,9 +19,11 @@
   --color-accent-light: #FCD8D3;
   --color-accent-2: #006EB7;
   --color-accent-2-light: #D9E9F4;
+  --color-accent-3: #F4D28C;
 
   /*neutrals*/
   --color-neutral-100: #F9F8F5; /*bg-light*/
+  --color-neutral-200: #f5f2f0;
   --color-neutral-300: #F4F2EC; /*bg + map-country*/
   --color-neutral-500: #DFE4DA; /*darker-bg*/
   --color-neutral-700: #888888; /*muted-text*/
