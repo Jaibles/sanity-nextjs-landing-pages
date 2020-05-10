@@ -12,12 +12,34 @@
   composes: container from "../styles/shared.module.css";
 }
 
-.Default {
+path.Default {
   border: 1px solid red;
+  fill: var(--color-neutral-500);
+}
+
+path.Default:nth-of-type(2) {
+  border: 1px solid red;
+  fill: var(--color-primary);
 }
 
 .Dark {
-  border: 1px solid blue;
+  border: 1px solid black;
+  fill: var(--color-accent-2-light);
+}
+
+path.Dark:nth-of-type(2) {
+  border: 1px solid red;
+  fill: var(--color-neutral-900);
+}
+
+.Monochrome {
+  border: 1px solid grey;
+  fill: var(--color-neutral-300);
+}
+
+path.Monochrome:nth-of-type(2) {
+  border: 1px solid red;
+  fill: var(--color-neutral-900);
 }
 
 .stylesDark {
