@@ -1,8 +1,17 @@
-.toggleContainer {
+.customRadio {
+  border: 1px solid red;
+}
+
+.radioContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0 0;
+  margin: -140px 0 5rem;
+}
+
+.customRadioc {
+  display: flex;
+  flex-direction: row;
 }
 
 .textMono {

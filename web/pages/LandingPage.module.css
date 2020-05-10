@@ -12,19 +12,46 @@
   composes: container from "../styles/shared.module.css";
 }
 
-path.Default {
+
+/*Map*/
+.customRadio {
+  border: 1px solid red;
+}
+
+.radioContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -140px 0 5rem;
+}
+
+.customRadioc {
+  display: flex;
+  flex-direction: row;
+}
+
+path.Brand {
   border: 1px solid red;
   fill: var(--color-neutral-500);
 }
 
-path.Default:nth-of-type(2) {
-  border: 1px solid red;
+path.Brand:nth-of-type(2) {
   fill: var(--color-primary);
 }
 
-.Dark {
-  border: 1px solid black;
+path.Standard {
+  border: 1px solid red;
   fill: var(--color-accent-2-light);
+}
+
+path.Standard:nth-of-type(2) {
+  border: 1px solid red;
+  fill: var(--color-accent-2);
+}
+
+path.Dark {
+  border: 1px solid red;
+  fill: var(--color-neutral-300);
 }
 
 path.Dark:nth-of-type(2) {
@@ -32,18 +59,14 @@ path.Dark:nth-of-type(2) {
   fill: var(--color-neutral-900);
 }
 
-.Monochrome {
-  border: 1px solid grey;
-  fill: var(--color-neutral-300);
+path.Grey {
+  border: 1px solid red;
+  fill: var(--color-neutral-100);
 }
 
-path.Monochrome:nth-of-type(2) {
+path.Grey:nth-of-type(2) {
   border: 1px solid red;
   fill: var(--color-neutral-900);
-}
-
-.stylesDark {
-  border: 1px solid blue;
 }
 
 .bg {

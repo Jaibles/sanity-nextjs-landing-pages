@@ -18,3 +18,43 @@ svg path.those {
   fill: var(--color-neutral-500) !important;
   opacity: 1;
 }
+
+
+path.Brand {
+  border: 1px solid red;
+  fill: var(--color-neutral-500);
+}
+
+path.Brand:nth-of-type(2) {
+  fill: var(--color-primary);
+}
+
+path.Standard {
+  border: 1px solid red;
+  fill: var(--color-accent-2-light);
+}
+
+path.Standard:nth-of-type(2) {
+  border: 1px solid red;
+  fill: var(--color-accent-2);
+}
+
+path.Dark {
+  border: 1px solid red;
+  fill: var(--color-neutral-300);
+}
+
+path.Dark:nth-of-type(2) {
+  border: 1px solid red;
+  fill: var(--color-neutral-900);
+}
+
+path.Grey {
+  border: 1px solid red;
+  fill: var(--color-neutral-100);
+}
+
+path.Grey:nth-of-type(2) {
+  border: 1px solid red;
+  fill: var(--color-neutral-900);
+}

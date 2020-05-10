@@ -5,40 +5,60 @@ class MapToggle extends Component {
   render () {
     return (
       <>
-        <div className={styles.toggleContainer}>
-          <div className={styles.onoffswitch}>
-            {/* XXX this.props.isToggleOn -> so we can access the parent state 'isToggleOn' */}
-            {/* XXX this.props.toggle -> so we can call the parent function */}
-            <input
-              type='radio'
-              name='Default'
-              className={styles.onoffswitchCheckbox}
-              value='Default'
-              onChange={this.props.switchMap}
-            />
-            <span className={styles.textMono}>
-              Default
-            </span>
-            <input
-              type='radio'
-              name='Dark'
-              className={styles.onoffswitchCheckbox}
-              value='Dark'
-              onChange={this.props.switchMap}
-            />
-            <span className={styles.textMono}>
-              Dark
-            </span>
-            <input
-              type='radio'
-              name='Monochrome'
-              className={styles.onoffswitchCheckbox}
-              value='Monochrome'
-              onChange={this.props.switchMap}
-            />
-            <span className={styles.textMono}>
-              Monochrome
-            </span>
+        <div className={styles.radioContainer}>
+          <div className={styles.customRadioc}>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='Standard'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Brand}
+                onChange={this.props.handleOptionChange}
+                checked={this.props.selectedOption === styles.Brand}
+              />
+              <span className={styles.textMono}>
+                Brand
+              </span>
+            </div>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='Standard'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Standard}
+                onChange={this.props.handleOptionChange}
+                checked={this.props.selectedOption === styles.Standard}
+              />
+              <span className={styles.textMono}>
+                Standard
+              </span>
+            </div>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='Dark'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Dark}
+                onChange={this.props.handleOptionChange}
+                checked={this.props.selectedOption === styles.Dark}
+              />
+              <span className={styles.textMono}>
+                Dark
+              </span>
+            </div>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='Grey'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Grey}
+                onChange={this.props.handleOptionChange}
+                checked={this.props.selectedOption === styles.Grey}
+              />
+              <span className={styles.textMono}>
+                Grey
+              </span>
+            </div>
           </div>
         </div>
       </>
