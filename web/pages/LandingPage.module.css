@@ -12,6 +12,18 @@
   composes: container from "../styles/shared.module.css";
 }
 
+.Default {
+  border: 1px solid red;
+}
+
+.Dark {
+  border: 1px solid blue;
+}
+
+.stylesDark {
+  border: 1px solid blue;
+}
+
 .bg {
   composes: background from "../styles/shared.module.css";
   margin: 80px 0;
@@ -19,24 +31,6 @@
   overflow-x: scroll;
 }
 
-.svgMap {
-  margin: 3rem 0 4rem;
-  width: 100vw;
-
-  @media (--media-max-medium) {
-    margin-top: 0;
-  }
-}
-
-svg path.that {
-  fill: var(--color-primary) !important;
-  opacity: 1;
-}
-
-svg path.those {
-  fill: var(--color-neutral-500) !important;
-  opacity: 1;
-}
 .textMono {
   composes: textMono from "../styles/shared.module.css";
 }
@@ -52,6 +46,36 @@ svg path.those {
     font-size: 12px;
   }
 }
+
+.svgMap {
+  margin: 3rem 0 4rem;
+  width: 100vw;
+
+  @media (--media-max-medium) {
+    margin-top: 0;
+  }
+}
+
+.dark {
+  border: 1px solid red;
+}
+
+.default {
+  border: 1px solid blue;
+}
+
+svg path.that {
+  fill: var(--color-primary) !important;
+  opacity: 1;
+  border: 1px solid red;
+}
+
+svg path.those {
+  fill: var(--color-neutral-500) !important;
+  opacity: 1;
+  border: 1px solid blue;
+}
+
 
 /* Features */
 .features > div {

@@ -1,0 +1,22 @@
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0;
+}
+
+.textMono {
+  composes: textMono from "../styles/shared.module.css";
+}
+
+.textMonoBlack {
+  composes: textMonoBlack from "../styles/shared.module.css";
+
+  @nest &:after {
+    content: '(save 10%!)';
+    position: absolute;
+    margin: 2px 0 0 6px;
+    color: var(--color-primary);
+    font-size: 12px;
+  }
+}
