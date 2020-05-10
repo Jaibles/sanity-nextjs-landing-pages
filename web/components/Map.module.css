@@ -9,17 +9,6 @@
   }
 }
 
-svg path.that {
-  fill: var(--color-primary) !important;
-  opacity: 1;
-}
-
-svg path.those {
-  fill: var(--color-neutral-500) !important;
-  opacity: 1;
-}
-
-
 path.Brand {
   border: 1px solid red;
   fill: var(--color-neutral-500);

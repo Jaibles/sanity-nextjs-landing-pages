@@ -104,7 +104,6 @@ class LandingPage extends Component {
     this.setState({
       selectedOption: changeEvent.target.value
     })
-    console.log(changeEvent.target.value)
   }
   render () {
     const {
@@ -177,7 +176,74 @@ class LandingPage extends Component {
         />
         {content && <RenderSections sections={content} />}
         <Map selectedOption={this.state.selectedOption} />
-        <MapToggle selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange} />
+        <div className={styles.radioContainer}>
+          <div className={styles.customRadioc}>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='theme'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Brand}
+                onChange={this.handleOptionChange}
+                checked={this.state.selectedOption === styles.Brand}
+              />
+              <div className={styles.radioTile}>
+                <div className={`${styles.colorPanelBrand} ${styles.colorPanel}`} />
+                <label htmlFor='brand' className={styles.textMono}>
+                  Brand
+                </label>
+              </div>
+            </div>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='theme'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Standard}
+                onChange={this.handleOptionChange}
+                checked={this.state.selectedOption === styles.Standard}
+              />
+              <div className={styles.radioTile}>
+                <div className={`${styles.colorPanelStandard} ${styles.colorPanel}`} />
+                <label htmlFor='standard' className={styles.textMono}>
+                  Standard
+                </label>
+              </div>
+            </div>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='theme'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Dark}
+                onChange={this.handleOptionChange}
+                checked={this.state.selectedOption === styles.Dark}
+              />
+              <div className={styles.radioTile}>
+                <div className={`${styles.colorPanelDark} ${styles.colorPanel}`} />
+                <label htmlFor='dark' className={styles.textMono}>
+                  Dark
+                </label>
+              </div>
+            </div>
+            <div className={styles.customRadio}>
+              <input
+                type='radio'
+                name='theme'
+                className={styles.onoffswitchCheckbox}
+                value={styles.Grey}
+                onChange={this.handleOptionChange}
+                checked={this.state.selectedOption === styles.Grey}
+              />
+              <div className={styles.radioTile}>
+                <div className={`${styles.colorPanelGrey} ${styles.colorPanel}`} />
+                <label htmlFor='grey' className={styles.textMono}>
+                  Grey
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
         {features && (
           <div id='features' className={styles.container}>
             <div className={styles.textCenter}>
