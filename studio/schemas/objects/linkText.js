@@ -5,19 +5,14 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'section',
-      title: 'Title',
+      name: 'message',
+      title: 'Text',
       type: 'string'
     },
     {
-      title: 'slug',
-      name: 'slug',
-      type: 'slug',
-      validation: Rule =>
-        Rule.uri({
-          allowRelative: true,
-          scheme: ['https', 'http', 'mailto', 'tel']
-        })
+      name: 'url',
+      title: 'URL',
+      type: 'string'
     }
   ]
 }

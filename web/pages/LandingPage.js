@@ -111,15 +111,15 @@ class LandingPage extends Component {
       description,
       disallowRobots,
       openGraphImage,
+      featureTitle,
       features = [],
-      featureTitle = [],
-      customersTitle = [],
+      customersTitle,
       customersSubTitle = [],
-      plansTitle = [],
-      plansSubTitle = [],
-      content = [],
       customers = [],
+      plansTitle,
+      plansSubTitle,
       plans = [],
+      content = [],
       config = {},
       slug
     } = this.props
@@ -175,9 +175,14 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
-        <Map selectedOption={this.state.selectedOption} />
-        <MapToggle selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange} />
-        {features && (
+        {(featureTitle &&
+          <>
+            <Map selectedOption={this.state.selectedOption} />
+            <MapToggle selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange} />
+          </>
+        ) || ''
+        }
+        {(featureTitle &&
           <div id='features' className={styles.container}>
             <div className={styles.textCenter}>
               <h2>{featureTitle}</h2>
@@ -185,9 +190,9 @@ class LandingPage extends Component {
             <div className={styles.features}>
               <Feature features={features} />
             </div>
-          </div>
-        )}
-        {customers && (
+          </div>) || ''
+        }
+        {(customersTitle &&
           <div id='customers' className={styles.bg}>
             <div className={styles.container}>
               <div className={styles.textCenter}>
@@ -200,9 +205,9 @@ class LandingPage extends Component {
                 </div>
               </div>
             </div>
-          </div>
-        )}
-        {plans && (
+          </div>) || ''
+        }
+        {(plansTitle &&
           <div id='pricing' className={styles.container}>
             <div className={styles.textCenter}>
               <h2>{plansTitle}</h2>
@@ -212,8 +217,8 @@ class LandingPage extends Component {
             <div className={styles.plans}>
               <Plan plans={plans} isToggleOn={this.state.isToggleOn} /> {/* pass the state 'isToggleOn' to the Plan component */}
             </div>
-          </div>
-        )}
+          </div>) || ''
+        }
       </Layout>
     )
   }
