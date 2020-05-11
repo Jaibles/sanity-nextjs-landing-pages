@@ -20,8 +20,6 @@
   margin: -120px 0 5rem;
 }
 
-
-
 /*Map*/
 path.Brand {
   fill: #fff; /*sea*/
@@ -95,15 +93,6 @@ path.Grey:nth-of-type(3) {
     margin: 2px 0 0 6px;
     color: var(--color-primary);
     font-size: 12px;
-  }
-}
-
-.svgMap {
-  margin: 3rem 0 4rem;
-  width: 100vw;
-
-  @media (--media-max-medium) {
-    margin-top: 0;
   }
 }
 
