@@ -213,7 +213,7 @@ class LandingPage extends Component {
               <h2>{plansTitle}</h2>
               <div className={styles.textMono}>{plansSubTitle}</div>
             </div>
-            <Toggle isToggleOn={this.state.isToggleOn} toggle={this.toggle} /> {/* pass the state 'isToggleOn' AND the function toggle() to the Toggle component */}
+            {/*<Toggle isToggleOn={this.state.isToggleOn} toggle={this.toggle} />*/}
             <div className={styles.plans}>
               <Plan plans={plans} isToggleOn={this.state.isToggleOn} /> {/* pass the state 'isToggleOn' to the Plan component */}
             </div>

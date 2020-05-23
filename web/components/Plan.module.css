@@ -9,14 +9,15 @@
   justify-content: space-between;
 }
 
-.plan:first-of-type, .plan:nth-child(3) {
+.plan:first-of-type, .plan:nth-child(3), .plan:nth-child(4) {
   border: var(--border-light);
   transform: scale(0.96);
 }
 
 .plan:first-of-type:hover,
-.plan:nth-child(3):hover {
-  transform: scale(1);
+.plan:nth-child(3):hover,
+.plan:nth-child(4):hover {
+  transform: scale(.98);
 }
 
 .planPriceAnnually,
@@ -28,8 +29,10 @@
 }
 
 .plan:nth-child(2) .planPriceAnnually:after,
-.plan:nth-child(2) .planPriceMonthly:after {
-  content: '/month';
+.plan:nth-child(2) .planPriceMonthly:after,
+.plan:nth-child(3) .planPriceMonthly:after,
+.plan:nth-child(3) .planPriceAnnually:after {
+  content: 'p/yr';
   position: absolute;
   margin: 18px 0 0;
   color: var(--color-neutral-700);
@@ -49,7 +52,8 @@
 }
 
 .plan:first-of-type .planName,
-.plan:nth-child(3)  .planName {
+.plan:nth-child(3) .planName,
+.plan:nth-child(4) .planName {
   background: var(--color-neutral-500);
   color: var(--color-neutral-900);
 }
@@ -60,13 +64,14 @@
 }
 
 .plan:first-of-type .btn,
-.plan:nth-child(3) .btn {
+.plan:nth-child(3) .btn,
+.plan:nth-child(4) .btn {
   background: var(--color-neutral-500);
   color: var(--color-neutral-900);
 }
 
-.plan:nth-child(3) .planPriceAnnually,
-.plan:nth-child(3) .planPriceMonthly {
+.plan:nth-child(4) .planPriceMonthly,
+.plan:nth-child(4) .planPriceAnnually {
   font-size: 20px;
 }
 
