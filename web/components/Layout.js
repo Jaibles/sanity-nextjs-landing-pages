@@ -5,6 +5,15 @@ import Head from 'next/head'
 import {LogoJsonLd} from 'next-seo'
 import Header from './Header'
 import Footer from './Footer'
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-TRP28VQ'
+}
+
+if (process.browser) {
+  TagManager.initialize(tagManagerArgs)
+}
 
 function Layout (props) {
   const {config, children} = props

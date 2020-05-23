@@ -17,5 +17,7 @@
     "@sanity/cli": "^1.149.9",
     "lerna": "^3.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-gtm-module": "^2.0.8"
+  }
 }
