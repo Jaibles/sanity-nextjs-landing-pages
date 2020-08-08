@@ -29,6 +29,7 @@ function Layout (props) {
   return (
     <>
       <Head>
+        <link rel="shortcut icon" href="favicon.ico" />
         <meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
         <link rel='preload' href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap' crossOrigin='anonymous' rel='stylesheet' />
         <link rel='preload' href='https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap' crossOrigin='anonymous' rel='stylesheet' />
