@@ -8,31 +8,23 @@ function cta (props) {
 
   if (route && route.slug && route.slug.current) {
     return (
-      <div>
-        <Link
-          href={{
-            pathname: '/LandingPage',
-            query: {slug: route.slug.current}
-          }}
-          as={`/${route.slug.current}`}
-        >
-          <a className={styles.button}>{title}</a>
-        </Link>
-        {supportingText}
-      </div>
+      <Link
+        href={{
+          pathname: '/LandingPage',
+          query: {slug: route.slug.current}
+        }}
+        as={`/${route.slug.current}`}
+      >
+        <a className={styles.button}>{title}</a>
+      </Link>
     )
   }
 
   if (link) {
     return (
-      <div>
-        <a className={styles.button} href={link}>
-          {title}
-        </a>
-        <div className={styles.textMono}>
-          {supportingText}
-        </div>
-      </div>
+      <a className={styles.button} href={link}>
+        {title}
+      </a>
     )
   }
 

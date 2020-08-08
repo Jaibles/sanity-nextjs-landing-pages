@@ -26,7 +26,8 @@ body,
 
 h1 {
   font-size: var(--font-title1-size);
-  margin: 0;
+  line-height: var(--font-title1-line-height);
+  margin: 0 0 32px;
 }
 
 h2 {
