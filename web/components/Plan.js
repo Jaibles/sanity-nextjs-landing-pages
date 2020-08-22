@@ -23,15 +23,6 @@ class Plan extends Component {
               })
               : null
             }
-            {
-              plan.cta
-                ? plan.cta.map(message => {
-                  return <a className={styles.btn} href={message.url} target='_blank'>
-                    {message.message}
-                  </a>
-                })
-                : null
-            }
           </div>
         )
         }
