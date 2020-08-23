@@ -29,9 +29,10 @@ function Layout (props) {
   return (
     <>
       <Head>
-        <link rel="icon" type="image/png" sizes="32x32" href="out/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="out/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="out/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
         <link rel='preload' href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap' crossOrigin='anonymous' rel='stylesheet' />
         <link rel='preload' href='https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap' crossOrigin='anonymous' rel='stylesheet' />
